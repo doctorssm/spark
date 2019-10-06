@@ -5,20 +5,19 @@ import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import React from 'react'
 
 interface NavBarItemProps {
-  content: string;
   icon?: string;
 }
 
 export class NavBarItem extends React.Component<NavBarItemProps> {
   render() {
-    const { icon, content } = this.props;
+    const { icon, children } = this.props;
 
     return (
       <div className="navbar-item">
         <span className="navbar-item-icon">
           <FontAwesomeIcon icon={icon as IconProp} />
         </span>
-        <span className="navbar-item-content">{content}</span>
+        <span className="navbar-item-content">{children}</span>
       </div>
     )
   }

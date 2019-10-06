@@ -9,8 +9,8 @@ export class NavBar extends React.Component {
   render() {
     return (
       <nav className="navbar">
-        <NavBarLink href={'#'} icon={'inbox'} content={'Входящие'} />
-        <NavBarLink href={'#'} icon={'calendar-alt'} content={'Календарь'} />
+        <NavBarLink href={'#'} icon={'inbox'}>Входящие</NavBarLink>
+        <NavBarLink href={'#'} icon={'calendar-alt'}>Календарь</NavBarLink>
 
         <NavBarList items={NavBarService.getFolderItems()} title={'Папки'} />
       </nav>

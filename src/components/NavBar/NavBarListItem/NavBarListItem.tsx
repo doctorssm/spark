@@ -14,7 +14,7 @@ export class NavBarListItem extends React.Component<NavBarListItemProps> {
 
     return (
       <li className="navbar-list-item">
-        <NavBarItem content={item.title} icon={item.icon} />
+        <NavBarItem icon={item.icon} >{item.title}</NavBarItem>
       </li>
     )
   }
