@@ -18,6 +18,7 @@ export class NavBarItem extends React.Component<NavBarItemProps> {
           <FontAwesomeIcon icon={icon as IconProp} />
         </span>
         <span className="navbar-item-content">{children}</span>
+        <span className="badge badge-pill badge-primary">41</span>
       </div>
     )
   }

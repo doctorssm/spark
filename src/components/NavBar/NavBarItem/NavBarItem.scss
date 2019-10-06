@@ -1,6 +1,8 @@
 @import '../../../styles/core/variables';
 
 .navbar-item {
+  display: flex;
+
   font-size: 13px;
   padding: 10px 20px;
   color: $alto;
@@ -24,4 +26,8 @@
 
 .navbar-item-content {
   margin-left: 5px;
+}
+
+.badge {
+  margin-left: auto;
 }
