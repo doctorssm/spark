@@ -5,6 +5,12 @@ import * as serviceWorker from './serviceWorker';
 import App from './components/App';
 import React from 'react';
 import ReactDOM from 'react-dom';
+// Font Awesome
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+library.add(fab, fas);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
