@@ -1,6 +1,6 @@
 import React from 'react'
 
-export class Folders extends React.Component {
+export class FolderList extends React.Component {
   render() {
     return (
       <>

@@ -1,2 +1,2 @@
-export * from './Navigation/Navigation';
-export * from './Folders/Folders';
+export * from './NavBar/NavBar';
+export * from './FolderList/FolderList';
