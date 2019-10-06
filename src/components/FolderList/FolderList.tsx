@@ -2,6 +2,7 @@ import './FolderList.scss';
 
 import { FolderItem } from '../../contracts/folder-item.interface';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import React from 'react'
 
 interface FolderListProps {
@@ -17,7 +18,7 @@ export class FolderList extends React.PureComponent<FolderListProps> {
         <ul className="folder-list">
           {items.map(item => {
             return (
-              <li><FontAwesomeIcon icon={'coffee'} />{item.title}</li>
+              <li><FontAwesomeIcon icon={item.icon as IconProp} />{item.title}</li>
             )
           })}
         </ul>

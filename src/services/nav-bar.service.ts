@@ -5,31 +5,31 @@ export class NavBarService {
   private folderItems: FolderItem[] = [
     {
       title: 'Отправленные',
-      icon: '',
+      icon: 'paper-plane',
       active: false,
       type: FolderType.Sent
     },
     {
       title: 'Черновики',
-      icon: '',
+      icon: 'file',
       active: false,
       type: FolderType.Drafts
     },
     {
       title: 'Отмеченные',
-      icon: '',
+      icon: 'thumbtack',
       active: false,
       type: FolderType.Marked
     },
     {
       title: 'Архив',
-      icon: '',
+      icon: 'archive',
       active: false,
       type: FolderType.Archive
     },
     {
       title: 'Еще',
-      icon: '',
+      icon: 'ellipsis-h',
       active: false,
     }
   ];
