@@ -1,4 +1,4 @@
-import { FolderItem } from '../contracts/folder-item.interface';
+import { FolderItem } from '../contracts/folder-item';
 import { FolderType } from '../enums';
 
 export class NavBarService {
