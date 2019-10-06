@@ -12,7 +12,12 @@ export class NavBar extends React.Component {
   };
 
   onFolderListItemClick = (item: FolderItem): void => {
-    console.log(item);
+    const items = this.state.items.map((i: FolderItem)  => {
+      i.active = item.type === i.type;
+      return i;
+    });
+
+    this.setState({ items });
   }
 
   componentDidMount() {

@@ -6,7 +6,7 @@ export class NavBarService {
     {
       title: 'Отправленные',
       icon: 'paper-plane',
-      active: true,
+      active: false,
       type: FolderType.Sent
     },
     {
