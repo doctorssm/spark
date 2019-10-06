@@ -1,6 +1,6 @@
 import './NavBar.scss';
 
-import { FolderItem } from '../../contracts/folder-item';
+import { FolderItem } from '../../contracts';
 import { NavBarLink } from './NavBarLink/NavBarLink';
 import { NavBarList } from './NavBarList/NavBarList';
 import NavBarService from '../../services/navbar.service';

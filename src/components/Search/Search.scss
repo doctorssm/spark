@@ -1,0 +1,11 @@
+@import '../../styles/core/variables';
+
+.search {
+  display: flex;
+  background-color: $white;
+  padding: 10px;
+}
+
+input {
+  margin-right: 15px;
+}
