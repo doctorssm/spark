@@ -2,22 +2,24 @@ import './NavBarItem.scss';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { NavItem } from '../../../contracts';
 import React from 'react'
 
 interface NavBarItemProps {
-  icon?: string;
+  item: NavItem;
+  onItemClick: (item: NavItem) => void;
 }
 
 export class NavBarItem extends React.Component<NavBarItemProps> {
   render() {
-    const { icon, children } = this.props;
+    const { item, onItemClick } = this.props;
 
     return (
-      <div className="navbar-item">
+      <div className="navbar-item" onClick={() => onItemClick(item)} >
         <span className="navbar-item-icon">
-          <FontAwesomeIcon icon={icon as IconProp} />
+          <FontAwesomeIcon icon={item.icon as IconProp} />
         </span>
-        <span className="navbar-item-content">{children}</span>
+        <span className="navbar-item-content">{item.title}</span>
         <span className="badge badge-pill badge-primary">41</span>
       </div>
     )
