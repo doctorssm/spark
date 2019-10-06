@@ -1,16 +1,20 @@
+import './FolderList.scss';
+
+import { FolderItem } from '../../contracts/folder-item.interface';
 import React from 'react'
 
-export class FolderList extends React.Component {
+interface FolderListProps {
+  items: FolderItem[];
+}
+
+export class FolderList extends React.PureComponent<FolderListProps> {
   render() {
+    const { items } = this.props;
     return (
       <>
         <div>Папки</div>
-        <ul>
-          <li>Отправленные</li>
-          <li>Черновики</li>
-          <li>Отмеченные</li>
-          <li>Архив</li>
-          <li>Еще</li>
+        <ul className="folder-list">
+          {items.map(item => <li>{item.title}</li>)}
         </ul>
       </>
     )
