@@ -15,7 +15,7 @@ export class FolderList extends React.PureComponent<FolderListProps> {
     return (
       <div className="folder-list">
         <div className="folder-list-legend">{title}</div>
-        <ul className="folder-list-items">
+        <ul className="side-bar-list">
           {items.map(item => <FolderListItem item={item} />)}
         </ul>
       </div>

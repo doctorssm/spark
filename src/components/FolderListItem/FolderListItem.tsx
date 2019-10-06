@@ -14,7 +14,7 @@ export class FolderListItem extends React.Component<FolderListItemProps> {
     const { item } = this.props;
 
     return (
-      <li className="item">
+      <li className="folder-list-item">
         <span className="item-icon">
           <FontAwesomeIcon icon={item.icon as IconProp} />
         </span>

@@ -1,16 +1,7 @@
 @import '../../styles/core/variables';
 
-.item {
+.side-bar-list li {
   padding: 10px 20px;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    cursor: pointer;
-
-    .item-icon {
-      color: $alto;
-    }
-  }
 }
 
 .item-icon {
