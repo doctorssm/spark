@@ -1,6 +1,15 @@
 @import '../../styles/core/variables';
 
 .folder-list {
-  font-size: 13px;
   color: $alto;
+}
+
+.folder-list-legend {
+  font-size: 12px;
+  padding-left: 20px;
+  color: $mid-gray;
+}
+
+.folder-list-items {
+  font-size: 13px;
 }

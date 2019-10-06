@@ -3,3 +3,13 @@
 .nav {
   color: $white;
 }
+
+.folder-list-items {
+  svg[data-icon="thumbtack"] path {
+    fill: $international-orange;
+  }
+
+  svg[data-icon="archive"] path {
+    fill: $apple;
+  }
+}

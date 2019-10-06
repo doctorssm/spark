@@ -13,12 +13,12 @@ export class FolderList extends React.PureComponent<FolderListProps> {
   render() {
     const { title, items } = this.props;
     return (
-      <>
-        <div>{title}</div>
-        <ul className="folder-list">
+      <div className="folder-list">
+        <div className="folder-list-legend">{title}</div>
+        <ul className="folder-list-items">
           {items.map(item => <FolderListItem item={item} />)}
         </ul>
-      </>
+      </div>
     )
   }
 }
