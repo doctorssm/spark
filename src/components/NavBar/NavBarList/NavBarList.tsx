@@ -6,7 +6,7 @@ import React from 'react'
 
 interface NavBarListProps {
   title?: string;
-  items: FolderItem[];
+  items: FolderItem[]; // TODO: NavBarItem?
 }
 
 export class NavBarList extends React.PureComponent<NavBarListProps> {
