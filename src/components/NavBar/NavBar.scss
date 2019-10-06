@@ -1,7 +1,6 @@
 @import '../../styles/core/variables';
 
-.navbar-link-group {
-  margin-bottom: 20px;
+.navbar-link {
   text-transform: uppercase;
 
   .navbar-item-icon {
@@ -20,5 +19,6 @@
 }
 
 .navbar-list-legend {
+  margin-top: 20px;
   padding-left: 20px;
 }
