@@ -13,7 +13,7 @@ export class NavBar extends React.Component {
     return (
       <nav className="nav">
         NAVIGATION
-        <FolderList items={NavBarService.getFolderItems()} />
+        <FolderList title={'Папки'} items={NavBarService.getFolderItems()} />
       </nav>
     )
   }
