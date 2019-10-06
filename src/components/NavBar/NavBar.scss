@@ -1,10 +1,15 @@
 @import '../../styles/core/variables';
 
-.nav {
-  color: $white;
+.navbar-link-group {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+
+  .navbar-item-icon {
+    color: $alto;
+  }
 }
 
-.side-bar-list {
+.navbar-list {
   svg[data-icon="thumbtack"] path {
     fill: $international-orange;
   }
@@ -12,4 +17,8 @@
   svg[data-icon="archive"] path {
     fill: $apple;
   }
+}
+
+.navbar-list-legend {
+  padding-left: 20px;
 }

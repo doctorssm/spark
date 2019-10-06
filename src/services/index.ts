@@ -1,1 +1,1 @@
-export * from './nav-bar.service';
+export * from './navbar.service';

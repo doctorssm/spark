@@ -1,0 +1,27 @@
+@import '../../../styles/core/variables';
+
+.navbar-item {
+  font-size: 13px;
+  padding: 10px 20px;
+  color: $alto;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+
+    svg path {
+      fill: $alto;
+    }
+  }
+}
+
+.navbar-item-icon {
+  display: inline-block;
+  color: $mid-gray;
+  text-align: center;
+  width: 20px;
+}
+
+.navbar-item-content {
+  margin-left: 5px;
+}

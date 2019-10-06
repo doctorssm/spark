@@ -1,26 +1,20 @@
 import './NavBar.scss';
 
-import { FolderList } from '../FolderList/FolderList';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import NavBarService from '../../services/nav-bar.service';
+import { NavBarLink } from './NavBarLink/NavBarLink';
+import { NavBarList } from './NavBarList/NavBarList';
+import NavBarService from '../../services/navbar.service';
 import React from 'react';
 
 export class NavBar extends React.Component {
-  componentDidMount() {
-
-  }
-
   render() {
     return (
-      <nav className="nav">
-        <ul className="side-bar-list">
-          <li><FontAwesomeIcon icon={'inbox'} />Входящие</li>
-          <li><FontAwesomeIcon icon={'calendar-alt'} />Календарь</li>
-        </ul>
+      <nav className="navbar">
+        <div className="navbar-link-group">
+          <NavBarLink href={'#'} icon={'inbox'} content={'Входящие'} />
+          <NavBarLink href={'#'} icon={'calendar-alt'} content={'Календарь'} />
+        </div>
 
-
-
-        <FolderList title={'Папки'} items={NavBarService.getFolderItems()} />
+        <NavBarList items={NavBarService.getFolderItems()} title={'Папки'} />
       </nav>
     )
   }
