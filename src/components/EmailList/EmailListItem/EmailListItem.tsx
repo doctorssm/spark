@@ -3,35 +3,13 @@ import { Email } from '../../../contracts'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './EmailListItem.scss';
+import { EmailListItemTime } from '../EmailListItemTime/EmailListItemTime';
 
 interface EmailListItemProps {
   email: Email;
 }
 
 export class EmailListItem extends React.Component<EmailListItemProps> {
-  getTime = (date: Date): string => {
-    if (this.isToday(date)) {
-      return `${date.getHours()} : ${date.getMinutes()}`;
-    }
-
-    if (this.isYesterday(date)) {
-      return `Вчера`;
-    }
-
-    return `${date.getDay()} ${date.toLocaleString('default', { month: 'short' })}`;
-  }
-
-  private isToday = (date: Date): boolean => {
-    const today = new Date();
-    return today.toDateString() === date.toDateString();
-  }
-
-  private isYesterday = (date: Date): boolean => {
-    const today = new Date();
-    const yesterday = today.setDate(today.getDate() - 1);
-    return new Date(yesterday).toDateString() === date.toDateString();
-  }
-
   render() {
     const { email } = this.props;
 
@@ -43,7 +21,7 @@ export class EmailListItem extends React.Component<EmailListItemProps> {
               <FontAwesomeIcon icon={'user'} />
             </div>
             <span className="email-from">{email.from}</span>
-            <span className="email-time">{this.getTime(new Date(email.date))}</span>
+            <EmailListItemTime date={new Date(email.date)} />
           </div>
           <div className="email-subject">{email.subject}</div>
           <div className="email-content">{email.content}</div>
