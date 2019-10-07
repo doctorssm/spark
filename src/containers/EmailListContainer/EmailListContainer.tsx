@@ -17,7 +17,9 @@ export class EmailListContainer extends React.Component {
     return (
       <div className="email-list-wrapper">
         <Search />
-        <EmailList emails={emails} />
+        <div className="bg-white full-height">
+          <EmailList emails={emails} header={'Отправленные'} icon={'paper-plane'}/>
+        </div>
       </div>
     )
   }

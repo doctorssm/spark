@@ -1,0 +1,20 @@
+@import '../../../styles/core/variables';
+
+.list-header {
+  display: flex;
+  align-items: center;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  margin-top: 8px;
+  padding: 10px;
+  height: 40px;
+  border-top: 1px solid $alto;
+  border-bottom: 1px solid $alto;
+
+  svg {
+    font-size: 14px;
+    margin-right: 5px;
+  }
+}

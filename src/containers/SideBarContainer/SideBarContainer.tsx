@@ -5,7 +5,6 @@ export class SideBarContainer extends React.Component {
   render() {
     return (
         <div className="side-bar">
-          SIDEBAR
           <NavBar />
         </div>
     )
