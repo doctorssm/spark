@@ -1,7 +1,7 @@
 [
   {
-    "date": "2019-10-06T19:53:01.414Z",
-    "from:": "test@example.com",
+    "date": "2019-10-07T15:53:01.414Z",
+    "from": "test@example.com",
     "subject": "Hello World",
     "content": "Hello Hello!",
     "read": false,
@@ -9,15 +9,15 @@
   },
   {
     "date": "2019-10-06T15:45:01.414Z",
-    "from:": "test-1@example.com",
+    "from": "test-1@example.com",
     "subject": "Hello World 2",
     "content": "Hello Hello! 2",
     "read": false,
     "deleted": false
   },
   {
-    "date": "2019-10-05T10:53:01.414Z",
-    "from:": "test-2@example.com",
+    "date": "2019-10-03T10:53:01.414Z",
+    "from": "test-2@example.com",
     "subject": "Hello World 3",
     "content": "Hello Hello! 3",
     "read": false,

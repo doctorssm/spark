@@ -1,0 +1,70 @@
+@import '../../../styles/core/variables';
+
+%flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.email-item {
+  padding-left: 30px;
+  padding-right: 15px;
+  transition: background-color 0.1s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $athens-gray;
+  }
+
+  &.active {
+    background-color: $white-ice;
+  }
+}
+
+.email-item-container {
+  padding: 15px 0;
+  border-bottom: 1px solid $alto;
+}
+
+.email-info {
+  display: flex;
+  margin-bottom: 8px;
+
+  width: 100%;
+
+  svg {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+}
+
+.email-icon {
+  @extend %flex-align-center;
+}
+
+.email-from {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 80%;
+  overflow: hidden;
+
+  font-weight: bold;
+}
+
+.email-time {
+  @extend %flex-align-center;
+
+  font-size: 11px;
+  color: $mid-gray;
+  margin-left: auto;
+}
+
+.email-subject {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.email-content {
+  font-size: 13px;
+  color: $mid-gray;
+}

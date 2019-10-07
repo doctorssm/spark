@@ -9,7 +9,12 @@
     background-color: $mirage;
   }
 
-  div {
+  .email-list-wrapper {
+    background-color: $white;
+    border-right: 1px solid $alto;
+  }
+
+  > div {
     flex: 1 1 50%;
   }
 }

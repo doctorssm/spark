@@ -1,0 +1,320 @@
+// --------------------------------------------------
+// Helper Classes
+// --------------------------------------------------
+
+// Position
+// -------------------------
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.fixed {
+  position: fixed;
+}
+
+// Floated Elements
+// -------------------------
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.clearfix {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// Flex Box
+// -------------------------
+
+.flex-column {
+  flex-direction: column
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+// Display Values
+// -------------------------
+
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+// Typography
+// -------------------------
+
+.bold {
+  font-weight: bold;
+}
+
+.regular {
+  font-weight: normal;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.text-capital {
+  text-transform: capitalize;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+// Aligning Elements
+// -------------------------
+
+// horizontal align
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.block-left {
+  margin-right: auto;
+}
+
+.block-right {
+  margin-left: auto;
+}
+
+.block-center {
+  margin: auto;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+// vertical align
+.align-top {
+  vertical-align: top;
+}
+
+.align-bottom {
+  vertical-align: bottom;
+}
+
+.align-middle {
+  vertical-align: middle;
+}
+
+// Margins
+// -------------------------
+
+// margins top
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+// margins right
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mr-20 {
+  margin-right: 20px;
+}
+
+.mr-30 {
+  margin-right: 30px;
+}
+
+.mr-40 {
+  margin-right: 40px;
+}
+
+.mr-50 {
+  margin-right: 50px;
+}
+
+// margins bottom
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+// margins left
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.ml-10 {
+  margin-left: 10px;
+}
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.ml-30 {
+  margin-left: 30px;
+}
+
+.ml-40 {
+  margin-left: 40px;
+}
+
+.ml-50 {
+  margin-left: 50px;
+}
+
+// Width and Height
+// -------------------------
+
+.fit {
+  max-width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.third-width {
+  width: 33.333%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+// Colors
+// -------------------------
+
+.white {
+  color: $white;
+}
+
+// Background Colors
+// -------------------------
+
+.bg-white {
+  background-color: $white;
+}
+
+// Visibility
+// -------------------------
+
+.hidden {
+  &.hidden {
+    display: none;
+  }
+}
+
+.visible {
+  &.visible {
+    display: block;
+  }
+}
+
+// Cursor
+// -------------------------
+
+.pointer {
+  cursor: pointer;
+}

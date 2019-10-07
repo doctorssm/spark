@@ -8,14 +8,16 @@ export class EmailListContainer extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({emails: EmailService.get()})
+    EmailService.get().then(emails => this.setState({ emails }))
   }
 
   render() {
+    const { emails } = this.state;
+
     return (
-      <div>
+      <div className="email-list-wrapper">
         <Search />
-        <EmailList emails={[]} />
+        <EmailList emails={emails} />
       </div>
     )
   }
