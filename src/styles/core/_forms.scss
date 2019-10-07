@@ -10,12 +10,3 @@ input {
   padding-left: 10px;
   padding-right: 10px;
 }
-
-input[type="search"] {
-  padding-left: 30px;
-
-  &::before {
-    content: 'CX';
-
-  }
-}
