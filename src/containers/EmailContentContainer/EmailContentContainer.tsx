@@ -1,5 +1,5 @@
 import React from 'react'
-import { EmailContent } from '../../components'
+import { EmailContent, EmailContentEmpty } from '../../components'
 import { Email } from '../../contracts'
 import { connect } from 'react-redux'
 import { AppState } from '../../store/app.reducer'
@@ -12,7 +12,7 @@ interface EmailContentContainerProps {
 const EmailContentContainer: React.FC<EmailContentContainerProps> = (props) => {
   return (
     <section className="email-content-container">
-      { props.email ? <EmailContent email={props.email} /> : 'EMAIL ICON' }
+      { props.email ? <EmailContent email={props.email} /> : <EmailContentEmpty /> }
     </section>
   )
 }

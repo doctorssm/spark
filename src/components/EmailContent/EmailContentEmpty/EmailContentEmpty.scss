@@ -1,0 +1,12 @@
+@import '../../../styles/core/variables';
+
+.empty-email-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 200px;
+  color: $alto;
+
+  height: 100%;
+}
