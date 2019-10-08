@@ -1,12 +1,14 @@
 import React from 'react'
-import { EmailContentActionBar, EmailContent } from '../../components'
+import { EmailContent, ActionBar } from '../../components'
 import { Email } from '../../contracts'
 
 export class EmailContentContainer extends React.Component {
   render() {
     return (
         <div className="email-content-container">
-          <EmailContentActionBar />
+          <div className="mb-25">
+            <ActionBar />
+          </div>
           <EmailContent email={
             {
               date: "2019-10-06T15:45:01.414Z",
