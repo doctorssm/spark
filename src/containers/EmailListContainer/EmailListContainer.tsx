@@ -15,12 +15,12 @@ export class EmailListContainer extends React.Component {
     const { emails } = this.state;
 
     return (
-      <div className="email-list-wrapper">
+      <section className="email-list-wrapper">
         <Search />
         <div className="bg-white full-height">
           <EmailList emails={emails} header={'Отправленные'} icon={'paper-plane'}/>
         </div>
-      </div>
+      </section>
     )
   }
 }

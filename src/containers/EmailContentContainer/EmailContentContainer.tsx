@@ -5,7 +5,7 @@ import { Email } from '../../contracts'
 export class EmailContentContainer extends React.Component {
   render() {
     return (
-        <div className="email-content-container">
+        <section className="email-content-container">
           <div className="mb-25">
             <ActionBar />
           </div>
@@ -19,7 +19,7 @@ export class EmailContentContainer extends React.Component {
               deleted: false
             } as unknown as Email
           } />
-        </div>
+        </section>
     )
   }
 }
