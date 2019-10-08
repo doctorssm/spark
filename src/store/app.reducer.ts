@@ -12,7 +12,7 @@ export const initialState: AppState = {
 export const reducer = (state: AppState = initialState, action: AppActions): AppState  => {
   switch (action.type) {
     case AppActionTypes.LOAD_EMAILS_SUCCESS: {
-      return state;
+      return { ...state, emails: action.emails };
     }
 
     default:
