@@ -1,13 +1,11 @@
-import { Email } from "../contracts";
-import data from '../data/emails.json';
+import axios from 'axios';
+import { Email } from '../contracts';
 
 class EmailService {
-  readonly endpoint: string = `http://XXX/api/emails`;
+  readonly endpoint: string = `https://spark-890bb.firebaseio.com/emails.json`;
 
   get(): Promise<Email[]> {
-    console.log(data);
-    return Promise.resolve(data as unknown as Email[]);
-    // return fetch(this.endpoint);
+    return axios.get<Email[]>(this.endpoint).then(res => res.data);
   }
 }
 
