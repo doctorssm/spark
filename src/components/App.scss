@@ -18,7 +18,17 @@
     padding: 15px;
   }
 
-  > div {
-    flex: 1 1 50%;
+  > section {
+    &:nth-child(1) {
+      flex: 1;
+    }
+
+    &:nth-child(2) {
+      flex: 1.7;
+    }
+
+    &:nth-child(3) {
+      flex: 5;
+    }
   }
 }
