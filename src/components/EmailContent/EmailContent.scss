@@ -1,0 +1,24 @@
+@import '../../styles/core/variables';
+
+.email-content {
+  background-color:$white;
+  border-radius: 3px;
+  box-shadow: -1px 1px 4px $alto;
+  padding: 15px 15px 30px 30px;
+}
+
+.email-subject {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+
+.email-from {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.email-to {
+  margin-bottom: 30px;
+  cursor: pointer;
+}

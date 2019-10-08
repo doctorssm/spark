@@ -24,7 +24,7 @@ export class EmailListItem extends React.Component<EmailListItemProps> {
             <EmailListItemTime date={new Date(email.date)} />
           </div>
           <div className="email-subject">{email.subject}</div>
-          <div className="email-content">{email.content}</div>
+          <div className="email-text">{email.content}</div>
         </div>
       </li>
     )
