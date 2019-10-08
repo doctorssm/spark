@@ -1,7 +1,7 @@
 import React from 'react';
 import './EmailContent.scss';
 import { Email } from '../../contracts';
-import { ActionBar } from '../ActionBar';
+import ActionBar from '../ActionBar/ActionBar';
 
 interface EmailContentProps {
   email: Email;

@@ -16,7 +16,7 @@ export type AppActions =
   | { type: AppActionTypes.LOAD_EMAILS_SUCCESS; emails: Email[] }
   | { type: AppActionTypes.LOAD_EMAILS_FAIL; }
   | { type: AppActionTypes.SET_ACTIVE_FOLDER; }
-  | { type: AppActionTypes.SET_ACTIVE_EMAIL; emailId: string };
+  | { type: AppActionTypes.SET_ACTIVE_EMAIL; emailId: string | null };
 
 export const initApp = (): any => async(dispatch: Dispatch) => {
   dispatch(loadEmails());
@@ -42,7 +42,7 @@ export const loadEmailsFail = (): AppActions => ({
   type: AppActionTypes.LOAD_EMAILS_FAIL
 });
 
-export const setActiveEmail = (emailId: string): AppActions => ({
+export const setActiveEmail = (emailId: string | null): AppActions => ({
   type: AppActionTypes.SET_ACTIVE_EMAIL,
   emailId
 });
