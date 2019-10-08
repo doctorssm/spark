@@ -9,19 +9,18 @@ interface EmailListProps {
   header: string;
   icon?: string;
   emails: Email[];
+  onItemClick: (emailId: string) => void;
 }
 
-export class EmailList extends React.Component<EmailListProps> {
-  render() {
-    const { header, icon, emails } = this.props;
+export const EmailList: React.FC<EmailListProps> = (props) => {
+  const { header, icon, emails, onItemClick } = props;
 
-    return (
-      <div className="list-email-wrapper">
-        <EmailListHeader header={header} icon={icon} />
-        <ul className="list-email">
-          { emails.map(email => <EmailListItem key={email.subject} email={email} /> ) }
-        </ul>
-      </div>
-    )
-  }
+  return (
+    <div className="list-email-wrapper">
+      <EmailListHeader header={header} icon={icon} />
+      <ul className="list-email">
+        { emails.map(email => <EmailListItem key={email.subject} email={email} onClick={onItemClick} /> ) }
+      </ul>
+    </div>
+  )
 }

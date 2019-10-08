@@ -7,26 +7,26 @@ import { EmailListItemTime } from '../EmailListItemTime/EmailListItemTime';
 
 interface EmailListItemProps {
   email: Email;
+  onClick: (emailId: string) => void;
 }
 
-export class EmailListItem extends React.Component<EmailListItemProps> {
-  render() {
-    const { email } = this.props;
+export const EmailListItem: React.FC<EmailListItemProps> = (props) => {
+  const { email, onClick } = props;
 
-    return (
-      <li className="email-item">
-        <div className="email-item-container">
-          <div className="email-info">
-            <div className="email-icon">
-              <FontAwesomeIcon icon={'user'} />
-            </div>
-            <span className="email-from">{email.from}</span>
-            <EmailListItemTime date={new Date(email.date)} />
+  return (
+    // TODO: replace subject to emailId
+    <li className="email-item" onClick={() => onClick(email.subject)}>
+      <div className="email-item-container">
+        <div className="email-info">
+          <div className="email-icon">
+            <FontAwesomeIcon icon={'user'} />
           </div>
-          <div className="email-subject">{email.subject}</div>
-          <div className="email-text">{email.content}</div>
+          <span className="email-from">{email.from}</span>
+          <EmailListItemTime date={new Date(email.date)} />
         </div>
-      </li>
-    )
-  }
+        <div className="email-subject">{email.subject}</div>
+        <div className="email-text">{email.content}</div>
+      </div>
+    </li>
+  )
 }
