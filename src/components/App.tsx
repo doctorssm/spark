@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 import './App.scss';
 
-import { EmailContentContainer, EmailListContainer, SideBarContainer } from '../containers';
+import { EmailContentContainer, SideBarContainer } from '../containers';
 
 import React, { useEffect } from 'react';
 import { Dispatch } from 'redux';
 import { initApp } from '../store/app.action';
+import EmailListContainer from '../containers/EmailListContainer/EmailListContainer';
 
 interface AppProps {
   init: () => void;

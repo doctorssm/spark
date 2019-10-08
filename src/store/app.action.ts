@@ -7,6 +7,7 @@ export enum AppActionTypes {
   LOAD_EMAILS = '[App] Load Emails',
   LOAD_EMAILS_SUCCESS = '[App] Load Emails Success',
   LOAD_EMAILS_FAIL = '[App] Load Emails Fail',
+  SET_ACTIVE_FOLDER = '[App] Set Active Folder'
 }
 
 export type AppActions =

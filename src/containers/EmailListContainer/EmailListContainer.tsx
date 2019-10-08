@@ -1,26 +1,29 @@
 import React from 'react'
 import { Search, EmailList } from '../../components';
-import EmailService from '../../services/email.service';
+import { Email } from '../../contracts';
+import { connect } from 'react-redux';
+import { AppState } from '../../store/app.reducer';
+import { getEmails } from '../../store/app.selector';
 
-export class EmailListContainer extends React.Component {
-  state = {
-    emails: []
-  };
-
-  componentDidMount() {
-    EmailService.get().then(emails => this.setState({ emails }))
-  }
-
-  render() {
-    const { emails } = this.state;
-
-    return (
-      <section className="email-list-wrapper">
-        <Search />
-        <div className="bg-white full-height">
-          <EmailList emails={emails} header={'Отправленные'} icon={'paper-plane'}/>
-        </div>
-      </section>
-    )
-  }
+interface EmailListContainerProps {
+  emails: Email[];
 }
+
+const EmailListContainer: React.FC<EmailListContainerProps> = (props) => {
+  return (
+    <section className="email-list-wrapper">
+      <Search />
+      <div className="bg-white full-height">
+        <EmailList emails={props.emails} header={'Отправленные'} icon={'paper-plane'}/>
+      </div>
+    </section>
+  )
+}
+
+const mapStateToProps = (state: AppState) => ({
+  emails: getEmails(state)
+});
+
+export default connect(
+  mapStateToProps
+)(EmailListContainer);
