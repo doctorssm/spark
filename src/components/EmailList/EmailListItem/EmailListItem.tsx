@@ -14,8 +14,7 @@ export const EmailListItem: React.FC<EmailListItemProps> = (props) => {
   const { email, onClick } = props;
 
   return (
-    // TODO: replace subject to emailId
-    <li className="email-item" onClick={() => onClick(email.subject)}>
+    <li className="email-item" onClick={() => onClick(email.id)}>
       <div className="email-item-container">
         <div className="email-info">
           <div className="email-icon">

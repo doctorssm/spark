@@ -3,7 +3,7 @@ import { AppState } from './app.reducer';
 export const getEmails = (state: AppState) => state.emails;
 
 export const getActiveEmail = (state: AppState) => {
-  return state.emails.find(email => email.subject === state.activeEmailId);
+  return state.emails.find(email => email.id === state.activeEmailId);
 };
 
 // TODO: update to reselect lib

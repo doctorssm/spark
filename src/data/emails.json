@@ -1,5 +1,6 @@
-[
-  {
+{
+  "e427edce-0600-4324-9408-2019cab22d0e": {
+    "id": "e427edce-0600-4324-9408-2019cab22d0e",
     "date": "2019-10-07T15:53:01.414Z",
     "from": "test@example.com",
     "subject": "Hello World",
@@ -7,7 +8,8 @@
     "read": false,
     "deleted": false
   },
-  {
+  "e8fc9147-fa32-4a08-8bdf-a448ac49d9e9": {
+    "id": "e8fc9147-fa32-4a08-8bdf-a448ac49d9e9",
     "date": "2019-10-06T15:45:01.414Z",
     "from": "test-1@example.com",
     "subject": "Hello World 2",
@@ -15,7 +17,8 @@
     "read": false,
     "deleted": false
   },
-  {
+  "a0c180f3-6ae8-4b9b-a360-ba1a6ab83873": {
+    "id": "a0c180f3-6ae8-4b9b-a360-ba1a6ab83873",
     "date": "2019-10-03T10:53:01.414Z",
     "from": "test-2@example.com",
     "subject": "Hello World 3",
@@ -23,4 +26,4 @@
     "read": false,
     "deleted": false
   }
-]
+}

@@ -5,7 +5,9 @@ class EmailService {
   readonly endpoint: string = `https://spark-890bb.firebaseio.com/emails`; // ?orderBy="subject"&equalTo="Hello World"`;
 
   get(): Promise<Email[]> {
-    return axios.get<Email[]>(`${this.endpoint}.json`).then(res => res.data);
+    return axios.get<Email[]>(`${this.endpoint}.json`)
+      .then(res => res.data)
+      .then(data => Object.values(data));
   }
 
   update(emailId: string, email: Partial<Email>): Promise<Email> {
