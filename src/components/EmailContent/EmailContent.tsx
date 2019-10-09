@@ -2,6 +2,7 @@ import React from 'react';
 import './EmailContent.scss';
 import { Email } from '../../contracts';
 import { ActionBar, ActionBarProps } from '../ActionBar/ActionBar';
+import classNames from 'classnames';
 
 interface EmailContentProps extends ActionBarProps {
   email: Email;
@@ -17,7 +18,7 @@ export class EmailContent extends React.Component<EmailContentProps> {
           <ActionBar onActionClick={onActionClick} />
         </div>
         <div className="email-subject">{email.subject}</div>
-        <div className="email-content">
+        <div className={classNames('email-content', { read: email.read})}>
           <div className="email-info">
             <div className="email-from">{email.from}</div>
             {/* <EmailListItemTime date={new Date(email.date)} /> */}

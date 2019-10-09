@@ -17,12 +17,13 @@ interface EmailContentContainerProps {
 const EmailContentContainer: React.FC<EmailContentContainerProps> = (props) => {
   const { email, setActiveEmail, updateEmail } = props;
 
+  // TODO: is this correct place for this logic?
   const onActionClick = (type: ActionType): void => {
     switch (type) {
       case ActionType.Close:
         return setActiveEmail(null);
       case ActionType.MarkAsRead:
-        return updateEmail({ read: !email!.read });
+        return updateEmail({ read: !email!.read }); // TODO: !
       case ActionType.Delete:
         return updateEmail({ deleted: true });
     }

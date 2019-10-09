@@ -24,7 +24,7 @@ export const reducer = (state: AppState = initialState, action: AppActions): App
       const emails = [...state.emails];
       const index = emails.findIndex(email => email.id === state.activeEmailId);
 
-      if (!index) {
+      if (index === -1) {
         return state;
       }
 
