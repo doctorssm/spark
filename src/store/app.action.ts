@@ -8,6 +8,9 @@ export enum AppActionTypes {
   LOAD_EMAILS = '[App] Load Emails',
   LOAD_EMAILS_SUCCESS = '[App] Load Emails Success',
   LOAD_EMAILS_FAIL = '[App] Load Emails Fail',
+  UPDATE_EMAIL = '[App] Update Email',
+  UPDATE_EMAIL_SUCCESS = '[App] Update Email Success',
+  UPDATE_EMAIL_FAIL = '[App] Update Email Fail',
   SET_ACTIVE_FOLDER = '[App] Set Active Folder',
   SET_ACTIVE_EMAIL = '[App] Set Active Email'
 }
@@ -16,6 +19,9 @@ export type AppActions =
   | { type: AppActionTypes.LOAD_EMAILS }
   | { type: AppActionTypes.LOAD_EMAILS_SUCCESS; emails: Email[] }
   | { type: AppActionTypes.LOAD_EMAILS_FAIL; }
+  | { type: AppActionTypes.UPDATE_EMAIL; email: Email }
+  | { type: AppActionTypes.UPDATE_EMAIL_SUCCESS; email: Email }
+  | { type: AppActionTypes.UPDATE_EMAIL_FAIL; }
   | { type: AppActionTypes.SET_ACTIVE_FOLDER; folderType: FolderType | undefined }
   | { type: AppActionTypes.SET_ACTIVE_EMAIL; emailId: string | null };
 
@@ -41,6 +47,31 @@ export const loadEmailsSuccess = (emails: Email[]): AppActions => ({
 
 export const loadEmailsFail = (): AppActions => ({
   type: AppActionTypes.LOAD_EMAILS_FAIL
+});
+
+export const update = (email: Email): any => async(dispatch: Dispatch) => {
+  dispatch(updateEmail(email));
+
+  try {
+    const updatedEmail = await EmailService.update(email);
+    dispatch(updateEmailSuccess(updatedEmail));
+  } catch (error) {
+    dispatch(updateEmailFail());
+  }
+};
+
+export const updateEmail = (email: Email): AppActions => ({
+  type: AppActionTypes.UPDATE_EMAIL,
+  email
+});
+
+export const updateEmailSuccess = (email: Email): AppActions => ({
+  type: AppActionTypes.UPDATE_EMAIL_SUCCESS,
+  email
+});
+
+export const updateEmailFail = (): AppActions => ({
+  type: AppActionTypes.UPDATE_EMAIL_FAIL
 });
 
 export const setActiveFolder = (folderType: FolderType| undefined): AppActions => ({
