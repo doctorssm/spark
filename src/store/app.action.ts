@@ -64,6 +64,7 @@ export const update = (updates: Partial<Email>): any => async(dispatch: Dispatch
   try {
     const updatedEmail = await EmailService.update(email.id, emailToUpdate);
     dispatch(updateEmailSuccess(updatedEmail));
+    dispatch(setActiveEmail(null));
   } catch (error) {
     dispatch(updateEmailFail());
   }

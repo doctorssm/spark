@@ -19,7 +19,10 @@ export const EmailList: React.FC<EmailListProps> = (props) => {
     <div className="list-email-wrapper">
       <EmailListHeader header={header} icon={icon} />
       <ul className="list-email">
-        { emails.map(email => <EmailListItem key={email.subject} email={email} onClick={onItemClick} /> ) }
+        { emails
+            .filter(email => !email.deleted)
+            .map(email => <EmailListItem key={email.subject} email={email} onClick={onItemClick} />)
+        }
       </ul>
     </div>
   )
