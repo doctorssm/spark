@@ -50,11 +50,19 @@ export const loadEmailsFail = (): AppActions => ({
   type: AppActionTypes.LOAD_EMAILS_FAIL
 });
 
-export const update = (email: Email): any => async(dispatch: Dispatch) => {
-  dispatch(updateEmail(email.id, email));
+export const update = (updates: Partial<Email>): any => async(dispatch: Dispatch, getState: () => AppState) => {
+  const { emails, activeEmailId } = getState();
+  const email = emails.find(email => email.id === activeEmailId);
+
+  if (!email) {
+    return;
+  }
+
+  const emailToUpdate = {...email, ...updates};
+  dispatch(updateEmail(email.id, emailToUpdate));
 
   try {
-    const updatedEmail = await EmailService.update(email.id, email);
+    const updatedEmail = await EmailService.update(email.id, emailToUpdate);
     dispatch(updateEmailSuccess(updatedEmail));
   } catch (error) {
     dispatch(updateEmailFail());

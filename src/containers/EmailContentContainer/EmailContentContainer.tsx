@@ -11,7 +11,7 @@ import { setActiveEmail, update } from '../../store/app.action'
 interface EmailContentContainerProps {
   email: Email | undefined;
   setActiveEmail: (emailId: string | null) => void;
-  updateEmail: (email: Email) => void;
+  updateEmail: (updates: Partial<Email>) => void;
 }
 
 const EmailContentContainer: React.FC<EmailContentContainerProps> = (props) => {
@@ -22,9 +22,9 @@ const EmailContentContainer: React.FC<EmailContentContainerProps> = (props) => {
       case ActionType.Close:
         return setActiveEmail(null);
       case ActionType.MarkAsRead:
-        return updateEmail({ ...email, read: !email!.read } as Email);
+        return updateEmail({ read: !email!.read });
       case ActionType.Delete:
-        return updateEmail({ ...email, deleted: true } as Email);
+        return updateEmail({ deleted: true });
     }
   }
 
@@ -41,7 +41,7 @@ const mapStateToProps = (state: AppState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   setActiveEmail: (emailId: string | null) => dispatch(setActiveEmail(emailId)),
-  updateEmail: (email: Email) => dispatch(update(email))
+  updateEmail: (updates: Partial<Email>) => dispatch(update(updates))
 });
 
 export default connect(
