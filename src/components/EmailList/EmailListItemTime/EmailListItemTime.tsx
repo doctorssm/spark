@@ -14,7 +14,7 @@ export class EmailListItemTime extends React.Component<EmailListItemTimeProps> {
       return `Вчера`;
     }
 
-    return `${date.getDay()} ${date.toLocaleString('default', { month: 'short' })}.`;
+    return `${date.getDate()} ${date.toLocaleString('default', { month: 'short' })}.`;
   }
 
   private isToday = (date: Date): boolean => {

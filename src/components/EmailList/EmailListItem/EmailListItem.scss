@@ -5,6 +5,12 @@
   align-items: center;
 }
 
+%text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .email-item {
   padding-left: 30px;
   padding-right: 15px;
@@ -32,8 +38,8 @@
     width: 100%;
 
     svg {
-      font-size: 12px;
-      margin-right: 10px;
+      font-size: 10px;
+      margin-right: 7px;
     }
   }
 
@@ -42,26 +48,27 @@
   }
 
   .email-from {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: 80%;
-    overflow: hidden;
-
     font-weight: bold;
+    max-width: 80%;
+
+    @extend %text-overflow-ellipsis;
   }
 
   .email-time {
-    @extend %flex-align-center;
-
     font-size: 11px;
     color: $mid-gray;
     margin-left: auto;
+
+    @extend %flex-align-center;
   }
 
   .email-subject {
     font-size: 13px;
     font-weight: bold;
     margin-bottom: 5px;
+    max-width: 85%;
+
+    @extend %text-overflow-ellipsis;
   }
 
   .email-text {
