@@ -20,6 +20,19 @@ export const reducer = (state: AppState = initialState, action: AppActions): App
       return { ...state, emails: action.emails };
     }
 
+    case AppActionTypes.UPDATE_EMAIL_SUCCESS: {
+      const emails = [...state.emails];
+      const index = emails.findIndex(email => email.id === state.activeEmailId);
+
+      if (!index) {
+        return state;
+      }
+
+      emails[index] = action.email;
+
+      return { ...state, emails };
+    }
+
     case AppActionTypes.SET_ACTIVE_FOLDER: {
       return { ...state, activeFolder: action.folderType };
     }

@@ -20,8 +20,8 @@ export type AppActions =
   | { type: AppActionTypes.LOAD_EMAILS }
   | { type: AppActionTypes.LOAD_EMAILS_SUCCESS; emails: Email[] }
   | { type: AppActionTypes.LOAD_EMAILS_FAIL; }
-  | { type: AppActionTypes.UPDATE_EMAIL; emailId: string, email: Partial<Email> }
-  | { type: AppActionTypes.UPDATE_EMAIL_SUCCESS; email: Partial<Email> }
+  | { type: AppActionTypes.UPDATE_EMAIL; emailId: string, email: Email }
+  | { type: AppActionTypes.UPDATE_EMAIL_SUCCESS; email: Email }
   | { type: AppActionTypes.UPDATE_EMAIL_FAIL; }
   | { type: AppActionTypes.SET_ACTIVE_FOLDER; folderType: FolderType | undefined }
   | { type: AppActionTypes.SET_ACTIVE_EMAIL; emailId: string | null };
@@ -50,24 +50,18 @@ export const loadEmailsFail = (): AppActions => ({
   type: AppActionTypes.LOAD_EMAILS_FAIL
 });
 
-export const update = (email: Partial<Email>): any => async(dispatch: Dispatch, getState: () => AppState) => {
-  const emailId = getState().activeEmailId;
-
-  if (!emailId) {
-    return;
-  }
-
-  dispatch(updateEmail(emailId, email));
+export const update = (email: Email): any => async(dispatch: Dispatch) => {
+  dispatch(updateEmail(email.id, email));
 
   try {
-    const updatedEmail = await EmailService.update(emailId, email);
+    const updatedEmail = await EmailService.update(email.id, email);
     dispatch(updateEmailSuccess(updatedEmail));
   } catch (error) {
     dispatch(updateEmailFail());
   }
 };
 
-export const updateEmail = (emailId: string, email: Partial<Email>): AppActions => ({
+export const updateEmail = (emailId: string, email: Email): AppActions => ({
   type: AppActionTypes.UPDATE_EMAIL,
   emailId,
   email

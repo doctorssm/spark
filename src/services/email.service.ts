@@ -10,8 +10,9 @@ class EmailService {
       .then(data => Object.values(data));
   }
 
-  update(emailId: string, email: Partial<Email>): Promise<Email> {
-    return axios.patch<Email>(`${this.endpoint}/${emailId}.json`, email).then(res => res.data);
+  update(emailId: string, email: Email): Promise<Email> {
+    return axios.put<Email>(`${this.endpoint}/${emailId}.json`, email)
+      .then(res => res.data);
   }
 }
 
