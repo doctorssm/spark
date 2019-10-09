@@ -2,6 +2,7 @@ import { Email } from "../contracts";
 import { Dispatch } from "redux";
 
 import EmailService from '../services/email.service';
+import { FolderType } from "../enums";
 
 export enum AppActionTypes {
   LOAD_EMAILS = '[App] Load Emails',
@@ -15,7 +16,7 @@ export type AppActions =
   | { type: AppActionTypes.LOAD_EMAILS }
   | { type: AppActionTypes.LOAD_EMAILS_SUCCESS; emails: Email[] }
   | { type: AppActionTypes.LOAD_EMAILS_FAIL; }
-  | { type: AppActionTypes.SET_ACTIVE_FOLDER; }
+  | { type: AppActionTypes.SET_ACTIVE_FOLDER; folderType: FolderType | undefined }
   | { type: AppActionTypes.SET_ACTIVE_EMAIL; emailId: string | null };
 
 export const initApp = (): any => async(dispatch: Dispatch) => {
@@ -40,6 +41,11 @@ export const loadEmailsSuccess = (emails: Email[]): AppActions => ({
 
 export const loadEmailsFail = (): AppActions => ({
   type: AppActionTypes.LOAD_EMAILS_FAIL
+});
+
+export const setActiveFolder = (folderType: FolderType| undefined): AppActions => ({
+  type: AppActionTypes.SET_ACTIVE_FOLDER,
+  folderType
 });
 
 export const setActiveEmail = (emailId: string | null): AppActions => ({

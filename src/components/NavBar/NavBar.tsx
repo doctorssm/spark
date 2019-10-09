@@ -1,12 +1,16 @@
 import './NavBar.scss';
 
-import { FolderItem } from '../../contracts';
+import { FolderItem, NavItem } from '../../contracts';
 import { NavBarLink } from './NavBarLink/NavBarLink';
 import { NavBarList } from './NavBarList/NavBarList';
 import NavBarService from '../../services/navbar.service';
 import React from 'react';
 
-export class NavBar extends React.Component {
+interface NavBarProps {
+  onFolderSelectionChange: (item: FolderItem) => void;
+}
+
+export class NavBar extends React.Component<NavBarProps> {
   state = {
     items: []
   };
@@ -26,13 +30,14 @@ export class NavBar extends React.Component {
 
   render() {
     const { items } = this.state;
+    const { onFolderSelectionChange } = this.props;
 
     return (
       <nav className="navbar">
         <NavBarLink href={'#'} icon={'inbox'} onClick={() => null}>Входящие</NavBarLink>
         <NavBarLink href={'#'} icon={'calendar-alt'} onClick={() => null}>Календарь</NavBarLink>
 
-        <NavBarList items={items} title={'Папки'} onItemClick={this.onFolderListItemClick} />
+        <NavBarList items={items} title={'Папки'} onItemClick={onFolderSelectionChange} />
       </nav>
     )
   }

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import './App.scss';
 
-import { SideBarContainer } from '../containers';
 
 import React, { useEffect } from 'react';
 import { Dispatch } from 'redux';
 import { initApp } from '../store/app.action';
+import SideBarContainer from '../containers/SideBarContainer/SideBarContainer';
 import EmailListContainer from '../containers/EmailListContainer/EmailListContainer';
 import EmailContentContainer from '../containers/EmailContentContainer/EmailContentContainer';
 
