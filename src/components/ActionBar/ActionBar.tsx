@@ -1,24 +1,13 @@
 import React from 'react'
-import { connect } from 'react-redux';
 import { Action } from './Action/Action';
 import { ActionType } from '../../enums';
-import { Dispatch } from 'redux';
-import { setActiveEmail } from '../../store/app.action';
 
-interface ActionBarProps {
-  setActiveEmail: (emailId: string | null) => void;
+export interface ActionBarProps {
+  onActionClick: (action: ActionType) => void;
 }
 
-const ActionBar: React.FC<ActionBarProps> = (props) => {
-  const onActionClick = (type: ActionType): void => {
-    const { setActiveEmail } = props;
-
-    switch (type) {
-      case ActionType.Close:
-        setActiveEmail(null);
-        break;
-    }
-  }
+export const ActionBar: React.FC<ActionBarProps> = (props) => {
+  const { onActionClick } = props;
 
   return (
     <div className="flex" >
@@ -43,12 +32,3 @@ const ActionBar: React.FC<ActionBarProps> = (props) => {
     </div>
   )
 }
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setActiveEmail: (emailId: string | null) => dispatch(setActiveEmail(emailId))
-});
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(ActionBar);

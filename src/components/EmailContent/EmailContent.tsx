@@ -1,20 +1,20 @@
 import React from 'react';
 import './EmailContent.scss';
 import { Email } from '../../contracts';
-import ActionBar from '../ActionBar/ActionBar';
+import { ActionBar, ActionBarProps } from '../ActionBar/ActionBar';
 
-interface EmailContentProps {
+interface EmailContentProps extends ActionBarProps {
   email: Email;
 }
 
 export class EmailContent extends React.Component<EmailContentProps> {
   render() {
-    const { email } = this.props;
+    const { email, onActionClick } = this.props;
 
     return (
       <>
         <div className="mb-25">
-          <ActionBar />
+          <ActionBar onActionClick={onActionClick} />
         </div>
         <div className="email-subject">{email.subject}</div>
         <div className="email-content">
