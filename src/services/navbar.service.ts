@@ -31,6 +31,11 @@ export class NavBarService {
       title: 'Еще',
       icon: 'ellipsis-h',
       active: false,
+    },
+    {
+      title: 'Корзина',
+      icon: 'trash-alt',
+      active: false,
     }
   ];
 
