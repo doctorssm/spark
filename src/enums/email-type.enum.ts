@@ -1,4 +1,4 @@
-export enum FolderType { // TODO: EmailType ?
+export enum EmailType {
   Sent = 'sent',
   Drafts = 'drafts',
   Marked = 'marked',

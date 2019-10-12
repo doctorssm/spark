@@ -1,16 +1,17 @@
+import { AppActionTypes, AppActions } from "./app.action";
+
 import { Email } from "../contracts";
-import { AppActions, AppActionTypes } from "./app.action";
-import { FolderType } from "../enums";
+import { EmailType } from "../enums";
 
 export interface AppState {
   emails: Email[];
-  activeFolder: FolderType | undefined;
+  activeEmailType: EmailType;
   activeEmailId: string | null;
 }
 
 export const initialState: AppState = {
   emails: [],
-  activeFolder: undefined,
+  activeEmailType: EmailType.Sent,
   activeEmailId: null
 };
 
@@ -34,7 +35,7 @@ export const reducer = (state: AppState = initialState, action: AppActions): App
     }
 
     case AppActionTypes.SET_ACTIVE_FOLDER: {
-      return { ...state, activeFolder: action.folderType };
+      return { ...state, activeEmailType: action.emailType };
     }
 
     case AppActionTypes.SET_ACTIVE_EMAIL: {

@@ -1,4 +1,5 @@
 import { AppState } from './app.reducer';
+import { EmailType } from '../enums';
 import { orderBy } from 'lodash';
 
 export const getEmails = (state: AppState) => state.emails;
@@ -14,6 +15,23 @@ export const getEmailById = (state: AppState, emailId: string) => {
   return state.emails.find(email => email.subject === emailId);
 }
 
-export const getActiveFolderType = (state: AppState) => state.activeFolder;
+export const getActiveEmailType = (state: AppState) => state.activeEmailType;
 
 export const isActiveEmailExist = (state: AppState) => !!state.activeEmailId;
+
+export const getFolderName = (state: AppState) => {
+  switch (state.activeEmailType) {
+    case EmailType.Sent:
+      return 'Отправленные';
+    case EmailType.Drafts:
+      return 'Черновики';
+    case EmailType.Marked:
+      return 'Отмеченные';
+    case EmailType.Archived:
+      return 'Архив';
+    case EmailType.Deleted:
+      return 'Корзина';
+    default:
+      return '';
+  }
+}

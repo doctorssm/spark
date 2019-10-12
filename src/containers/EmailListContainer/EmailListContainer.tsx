@@ -1,43 +1,25 @@
 import { EmailList, Search } from '../../components';
-import { getActiveFolderType, getEmailsSortedByDate } from '../../store/app.selector';
+import { getEmailsSortedByDate, getFolderName } from '../../store/app.selector';
 
 import { AppState } from '../../store/app.reducer';
 import { Dispatch } from 'redux';
 import { Email } from '../../contracts';
-import { FolderType } from '../../enums';
 import React from 'react'
 import { connect } from 'react-redux';
 import { setActiveEmail } from '../../store/app.action';
 
 interface EmailListContainerProps {
   emails: Email[];
-  activeFolderType: FolderType | undefined
+  activeFolder: string;
   setActiveEmail: (emailId: string) => void;
 }
 
 const EmailListContainer: React.FC<EmailListContainerProps> = (props) => {
-  const { emails, setActiveEmail } = props;
+  const { emails, activeFolder, setActiveEmail } = props;
 
   const onEmailClick = (emailId: string): void => {
     setActiveEmail(emailId);
   };
-
-  const getHeaderName = () => {
-    switch(props.activeFolderType) {
-      case FolderType.Sent:
-        return 'Отправленные';
-      case FolderType.Drafts:
-        return 'Черновики';
-      case FolderType.Marked:
-        return 'Отмеченные';
-      case FolderType.Archived:
-        return 'Архив';
-      case FolderType.Deleted:
-        return 'Корзина';
-      default:
-        return '';
-    }
-  }
 
   // const getHeaderIcon = () => {
   //   switch(props.activeFolderType) {
@@ -58,7 +40,7 @@ const EmailListContainer: React.FC<EmailListContainerProps> = (props) => {
     <section className="overflow-hidden">
       <Search />
       <div className="bg-white full-height">
-        <EmailList emails={emails} header={getHeaderName()} icon={'paper-plane'} onItemClick={onEmailClick} />
+        <EmailList emails={emails} header={activeFolder} icon={'paper-plane'} onItemClick={onEmailClick} />
       </div>
     </section>
   )
@@ -66,7 +48,7 @@ const EmailListContainer: React.FC<EmailListContainerProps> = (props) => {
 
 const mapStateToProps = (state: AppState) => ({
   emails: getEmailsSortedByDate(state),
-  activeFolderType: getActiveFolderType(state)
+  activeFolder: getFolderName(state)
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

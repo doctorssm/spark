@@ -1,12 +1,13 @@
-import React from 'react'
 import { EmailContent, EmailContentEmpty } from '../../components'
-import { Email } from '../../contracts'
-import { connect } from 'react-redux'
-import { AppState } from '../../store/app.reducer'
-import { getActiveEmail } from '../../store/app.selector'
-import { ActionType } from '../../enums'
-import { Dispatch } from 'redux'
 import { setActiveEmail, update } from '../../store/app.action'
+
+import { ActionType } from '../../enums'
+import { AppState } from '../../store/app.reducer'
+import { Dispatch } from 'redux'
+import { Email } from '../../contracts'
+import React from 'react'
+import { connect } from 'react-redux'
+import { getActiveEmail } from '../../store/app.selector'
 
 interface EmailContentContainerProps {
   email: Email | undefined;

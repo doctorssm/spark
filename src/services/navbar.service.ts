@@ -1,45 +1,45 @@
-import { FolderItem } from '../contracts';
-import { FolderType } from '../enums';
+import { EmailType } from '../enums';
+import { NavItem } from '../contracts';
 
 export class NavBarService {
-  private folderItems: FolderItem[] = [
+  private navItems: NavItem[] = [
     {
       title: 'Отправленные',
       icon: 'paper-plane',
       active: false,
-      type: FolderType.Sent
+      type: EmailType.Sent
     },
     {
       title: 'Черновики',
       icon: 'file',
       active: false,
-      type: FolderType.Drafts
+      type: EmailType.Drafts
     },
     {
       title: 'Отмеченные',
       icon: 'thumbtack',
       active: false,
-      type: FolderType.Marked
+      type: EmailType.Marked
     },
     {
       title: 'Архив',
       icon: 'archive',
       active: false,
-      type: FolderType.Archived
+      type: EmailType.Archived
     },
     {
       title: 'Корзина',
       icon: 'trash-alt',
       active: false,
-      type: FolderType.Deleted
+      type: EmailType.Deleted
     }
   ];
 
-  getFolderItems(): FolderItem[]  {
-    return this.folderItems;
+  getNavItems(): NavItem[]  {
+    return this.navItems;
   }
 
-  addFolder(): void {
+  addNavItem(): void {
     // TODO: to store?
   }
 }

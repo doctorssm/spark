@@ -1,19 +1,18 @@
 import { Dispatch } from 'redux';
-import { FolderItem } from '../../contracts';
-import { FolderType } from '../../enums';
+import { EmailType } from '../../enums';
 import { NavBar } from '../../components';
+import { NavItem } from '../../contracts';
 import React from 'react'
 import { connect } from 'react-redux';
 import { setActiveFolderAction } from '../../store/app.action';
 
 interface SideBarContainerProps {
-  setActiveFolder: (type: FolderType | undefined) => void;
+  setActiveFolder: (type: EmailType) => void;
 }
 
 const SideBarContainer: React.FC<SideBarContainerProps> = (props) => {
-  const onActiveEmailTypeChange = (item: FolderItem | null): void => {
-    const value = item && item.type || undefined;
-    props.setActiveFolder(value);
+  const onActiveEmailTypeChange = (item: NavItem): void => {
+    props.setActiveFolder(item.type);
   }
 
   return (
@@ -24,7 +23,7 @@ const SideBarContainer: React.FC<SideBarContainerProps> = (props) => {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setActiveFolder: (type: FolderType| undefined) => dispatch(setActiveFolderAction(type))
+  setActiveFolder: (type: EmailType) => dispatch(setActiveFolderAction(type))
 });
 
 export default connect(
