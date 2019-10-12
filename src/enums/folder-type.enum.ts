@@ -1,6 +1,7 @@
 export enum FolderType { // TODO: EmailType ?
-  Sent,
-  Drafts,
-  Marked,
-  Archive
+  Sent = 'sent',
+  Drafts = 'drafts',
+  Marked = 'marked',
+  Archived = 'archived',
+  Deleted = 'deleted'
 }

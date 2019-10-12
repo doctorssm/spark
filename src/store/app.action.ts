@@ -1,9 +1,8 @@
-import { Email } from "../contracts";
+import { AppState } from "./app.reducer";
 import { Dispatch } from "redux";
-
+import { Email } from "../contracts";
 import EmailService from '../services/email.service';
 import { FolderType } from "../enums";
-import { AppState } from "./app.reducer";
 
 export enum AppActionTypes {
   LOAD_EMAILS = '[App] Load Emails',
@@ -27,10 +26,14 @@ export type AppActions =
   | { type: AppActionTypes.SET_ACTIVE_EMAIL; emailId: string | null };
 
 export const initApp = (): any => async(dispatch: Dispatch) => {
+  dispatch(fetchEmails());
+};
+
+export const fetchEmails = (): any => async(dispatch: Dispatch, getState: () => AppState) => {
   dispatch(loadEmails());
 
   try {
-    const emails = await EmailService.get();
+    const emails = await EmailService.get(getState().activeFolder);
     dispatch(loadEmailsSuccess(emails));
   } catch (error) {
     dispatch(loadEmailsFail());
@@ -83,6 +86,11 @@ export const updateEmailSuccess = (email: Email): AppActions => ({
 export const updateEmailFail = (): AppActions => ({
   type: AppActionTypes.UPDATE_EMAIL_FAIL
 });
+
+export const setActiveFolderAction = (folderType: FolderType| undefined): any => async(dispatch: Dispatch) => {
+  dispatch(setActiveFolder(folderType));
+  dispatch(fetchEmails());
+};
 
 export const setActiveFolder = (folderType: FolderType| undefined): AppActions => ({
   type: AppActionTypes.SET_ACTIVE_FOLDER,

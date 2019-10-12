@@ -25,17 +25,22 @@ export class NavBarService {
       title: 'Архив',
       icon: 'archive',
       active: false,
-      type: FolderType.Archive
+      type: FolderType.Archived
     },
     {
       title: 'Корзина',
       icon: 'trash-alt',
       active: false,
+      type: FolderType.Deleted
     }
   ];
 
   getFolderItems(): FolderItem[]  {
     return this.folderItems;
+  }
+
+  addFolder(): void {
+    // TODO: to store?
   }
 }
 

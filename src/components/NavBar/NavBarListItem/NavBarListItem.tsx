@@ -4,8 +4,9 @@ import { NavBarItem } from '../NavBarItem/NavBarItem';
 import { NavItem } from '../../../contracts';
 import React from 'react'
 
-interface NavBarListItemProps {
+interface NavBarListItemProps { // TODO: extend?
   item: NavItem;
+  badge?: number;
   onItemClick: (item: NavItem) => void;
 }
 

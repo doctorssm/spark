@@ -30,10 +30,12 @@ const EmailListContainer: React.FC<EmailListContainerProps> = (props) => {
         return 'Черновики';
       case FolderType.Marked:
         return 'Отмеченные';
-      case FolderType.Archive:
+      case FolderType.Archived:
         return 'Архив';
+      case FolderType.Deleted:
+        return 'Корзина';
       default:
-        return 'Отправленные';
+        return '';
     }
   }
 

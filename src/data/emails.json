@@ -7,7 +7,7 @@
     "content": "Officia eu duis laboris in Lorem elit esse labore fugiat in qui aute adipisicing cupidatat. Irure elit ullamco sint irure. Pariatur eiusmod veniam amet adipisicing cupidatat id consequat eiusmod. Proident incididunt voluptate nulla deserunt. Eiusmod ea exercitation aliqua magna consequat sunt cillum voluptate Lorem ex eu.\r\n",
     "read": false,
     "deleted": false,
-    "type": "sent"
+    "type": "archived"
   },
   "5da1b35fcc2eaf2b3c2fd86d": {
     "id": "5da1b35fcc2eaf2b3c2fd86d",
@@ -17,7 +17,7 @@
     "content": "Duis labore consectetur veniam cillum irure culpa irure amet consequat commodo. Labore ex laboris culpa sit exercitation laborum sint nisi Lorem anim reprehenderit qui pariatur deserunt. Deserunt et culpa irure duis sunt officia dolor qui. Consequat non non tempor non do esse sunt velit id. Irure cupidatat amet dolor consectetur. Ullamco nulla esse eiusmod nisi dolor fugiat amet consequat irure occaecat cillum in voluptate nostrud.\r\n",
     "read": false,
     "deleted": false,
-    "type": "green"
+    "type": "sent"
   },
   "5da1b35f420637c031bfa355": {
     "id": "5da1b35f420637c031bfa355",
@@ -27,7 +27,7 @@
     "content": "Incididunt nostrud labore excepteur quis. Velit labore culpa eu Lorem ut culpa est culpa duis ullamco minim anim officia reprehenderit. Sunt ex anim duis sit culpa laborum. Ad exercitation velit ullamco ullamco dolor pariatur pariatur non. Qui commodo enim elit reprehenderit nostrud mollit aliquip sit enim Lorem deserunt non sunt.\r\n",
     "read": true,
     "deleted": false,
-    "type": "sent"
+    "type": ""
   },
   "5da1b35fa775244624c62047": {
     "id": "5da1b35fa775244624c62047",
@@ -37,7 +37,7 @@
     "content": "Enim dolore id eiusmod occaecat qui aliquip amet aliquip eu dolore. Labore consectetur deserunt do et qui. Consequat velit tempor dolore cillum anim amet proident dolor ex. Commodo exercitation veniam ad ut veniam ex sit. Consectetur ex do quis nisi cillum anim sit cupidatat. Cillum nostrud do dolor excepteur irure consequat. Eu adipisicing occaecat ea sint ea consectetur.\r\n",
     "read": true,
     "deleted": false,
-    "type": "green"
+    "type": "deleted"
   },
   "5da1b35fc9d4b3f645905dfb": {
     "id": "5da1b35fc9d4b3f645905dfb",
@@ -47,7 +47,7 @@
     "content": "Laboris cillum dolor non deserunt reprehenderit Lorem et. Ut ipsum minim veniam ad qui consectetur tempor. Mollit nulla in reprehenderit velit dolore et minim tempor velit consectetur sunt nulla. Commodo enim do aliquip officia qui fugiat consectetur in officia dolor incididunt et mollit cupidatat. Cupidatat labore incididunt amet voluptate. Magna irure tempor commodo aute incididunt incididunt labore veniam irure Lorem cupidatat nulla.\r\n",
     "read": false,
     "deleted": false,
-    "type": "sent"
+    "type": "drafts"
   },
   "5da1b35f925943d0128ef322": {
     "id": "5da1b35f925943d0128ef322",
@@ -57,7 +57,7 @@
     "content": "Eu et ipsum culpa excepteur do laboris do elit aliquip. Proident quis dolore aliquip voluptate est exercitation. In do ea aliquip eu pariatur laboris sunt ex elit laboris cupidatat. Magna consequat aliqua amet consequat. Labore consequat proident esse sit cillum. Laboris sint pariatur minim incididunt velit elit nulla eu.\r\n",
     "read": false,
     "deleted": false,
-    "type": "green"
+    "type": "archived"
   },
   "5da1b35f8dbcd379713acdf4": {
     "id": "5da1b35f8dbcd379713acdf4",
@@ -67,7 +67,7 @@
     "content": "Nisi irure incididunt qui pariatur eiusmod magna voluptate amet. Mollit consectetur pariatur irure amet pariatur laboris ad reprehenderit culpa excepteur in dolore duis ut. Aliqua fugiat id in veniam anim. Quis irure aliqua veniam sit.\r\n",
     "read": false,
     "deleted": false,
-    "type": "sent"
+    "type": "drafts"
   },
   "5da1b35fbeb8463f1e2af8a8": {
     "id": "5da1b35fbeb8463f1e2af8a8",
@@ -77,7 +77,7 @@
     "content": "Fugiat dolor ullamco nostrud ut ea adipisicing qui Lorem proident ex. Sit est voluptate dolor tempor ut aute in incididunt eiusmod veniam magna ipsum ea. Reprehenderit adipisicing magna consequat cillum aliquip pariatur cillum esse culpa amet excepteur veniam consequat. Lorem amet non mollit ullamco consectetur veniam cupidatat excepteur nisi velit mollit et irure. Esse labore nostrud fugiat sunt elit. Id cupidatat aute eu exercitation ipsum aute labore ut anim enim culpa eiusmod dolor culpa.\r\n",
     "read": true,
     "deleted": false,
-    "type": "archived"
+    "type": "drafts"
   },
   "5da1b35f0924e8bf22223947": {
     "id": "5da1b35f0924e8bf22223947",
@@ -87,7 +87,7 @@
     "content": "Lorem culpa cupidatat duis amet sint excepteur anim amet dolore adipisicing sunt. Proident excepteur do enim mollit eu consequat duis tempor esse tempor in enim. Dolore Lorem voluptate amet tempor minim fugiat veniam sit officia exercitation incididunt.\r\n",
     "read": false,
     "deleted": false,
-    "type": "green"
+    "type": ""
   },
   "5da1b35f11bcf7fdc1a359b8": {
     "id": "5da1b35f11bcf7fdc1a359b8",
@@ -107,7 +107,7 @@
     "content": "Sit laborum duis aliqua anim aliqua aute qui eiusmod irure ad nisi. Laboris enim aute elit aliquip. Magna irure cupidatat dolore ipsum magna aute labore. Do est minim do ea. Et dolore est officia in nulla consectetur do ea. Sint incididunt sint Lorem et laborum velit ut sint mollit laborum do culpa labore. Eiusmod dolor Lorem nisi enim cillum eu pariatur.\r\n",
     "read": false,
     "deleted": false,
-    "type": "sent"
+    "type": "deleted"
   },
   "5da1b35f0c955a8fbd26829a": {
     "id": "5da1b35f0c955a8fbd26829a",
@@ -117,7 +117,7 @@
     "content": "Ex reprehenderit esse amet excepteur cupidatat exercitation excepteur irure amet labore deserunt ipsum. Sint exercitation cillum id non. Occaecat in sit mollit enim ea et fugiat incididunt non et in occaecat eiusmod. Tempor elit minim excepteur incididunt officia consequat excepteur mollit cillum esse sunt laboris qui. Excepteur laboris nisi ex culpa fugiat incididunt est ea qui.\r\n",
     "read": false,
     "deleted": false,
-    "type": "archived"
+    "type": "sent"
   },
   "5da1b35fe426a9cb9d7bcc01": {
     "id": "5da1b35fe426a9cb9d7bcc01",
@@ -127,7 +127,7 @@
     "content": "Labore cillum aliqua amet ullamco eu consectetur pariatur. Id cillum ut culpa non aute sunt veniam tempor velit elit minim in id dolor. Id ad minim nulla reprehenderit deserunt eiusmod Lorem cillum velit reprehenderit id. Adipisicing tempor labore consectetur esse.\r\n",
     "read": true,
     "deleted": false,
-    "type": "sent"
+    "type": "deleted"
   },
   "5da1b35f2cdb529c45de7f4f": {
     "id": "5da1b35f2cdb529c45de7f4f",
@@ -137,7 +137,7 @@
     "content": "Tempor duis do Lorem ex est incididunt tempor labore. Reprehenderit est mollit dolore quis magna occaecat dolor in sit qui eiusmod aliqua. Aliqua in officia anim duis pariatur. Laboris Lorem laboris tempor fugiat quis. Fugiat qui elit elit non ad est minim consequat nostrud. Consectetur laboris adipisicing mollit nisi esse ut ullamco exercitation sint et ut ipsum.\r\n",
     "read": true,
     "deleted": false,
-    "type": "green"
+    "type": "marked"
   },
   "5da1b35f2297a708509c7312": {
     "id": "5da1b35f2297a708509c7312",
@@ -147,7 +147,7 @@
     "content": "Sunt magna minim culpa excepteur dolor mollit ea laborum veniam. Sit excepteur proident veniam elit enim nulla. Eu eu velit dolor quis ipsum esse eiusmod nostrud veniam magna enim sit aliquip. Officia ipsum dolore magna deserunt magna Lorem Lorem eiusmod. Aute dolor officia nulla incididunt deserunt in sint nisi labore nulla dolor consectetur. Sunt sint minim dolor aliqua et velit enim anim. Ea laboris deserunt laboris irure officia anim adipisicing fugiat nisi sit aute aute nisi.\r\n",
     "read": true,
     "deleted": false,
-    "type": "archived"
+    "type": "sent"
   },
   "5da1b35ff19dfc227385d6c4": {
     "id": "5da1b35ff19dfc227385d6c4",
@@ -157,7 +157,7 @@
     "content": "Est incididunt dolor proident duis proident nostrud. Aliqua aute commodo commodo laborum aute sit veniam anim incididunt elit esse consectetur quis Lorem. Eiusmod consectetur ex eu nulla duis dolore laborum in ad fugiat. Labore ea dolor et nostrud Lorem eiusmod adipisicing Lorem proident velit commodo eu ullamco.\r\n",
     "read": false,
     "deleted": false,
-    "type": "sent"
+    "type": "drafts"
   },
   "5da1b35f0368d5ae39a5e6a8": {
     "id": "5da1b35f0368d5ae39a5e6a8",
@@ -167,7 +167,7 @@
     "content": "Duis cillum ut fugiat deserunt excepteur qui dolor ex amet mollit ad consectetur enim velit. Est laborum velit consectetur dolore. Tempor ad voluptate eiusmod eu exercitation. Cillum nisi excepteur id tempor velit ea cupidatat esse sunt et ipsum culpa voluptate. Excepteur consequat commodo ipsum elit fugiat mollit officia duis laborum aliquip aute adipisicing tempor. Mollit nisi cupidatat elit non ex cillum est minim ad non occaecat esse ipsum duis.\r\n",
     "read": false,
     "deleted": false,
-    "type": "green"
+    "type": "marked"
   },
   "5da1b35fbcb347f5fbbf1b98": {
     "id": "5da1b35fbcb347f5fbbf1b98",
@@ -177,7 +177,7 @@
     "content": "Id est est nostrud laborum ut occaecat id nisi sint consequat. Anim dolore dolore in enim ad ullamco esse ad ea aliquip magna sunt culpa. Mollit sunt nisi irure aute anim mollit commodo nostrud fugiat amet deserunt sint anim ut. Mollit amet nulla occaecat enim excepteur tempor cupidatat excepteur aliquip. Magna consequat do veniam sit anim. Irure irure culpa minim cupidatat aute non amet laboris. Pariatur elit exercitation consectetur Lorem enim cillum voluptate et laborum.\r\n",
     "read": false,
     "deleted": false,
-    "type": "archived"
+    "type": ""
   },
   "5da1b35fd2524750d93ed4d5": {
     "id": "5da1b35fd2524750d93ed4d5",
@@ -187,7 +187,7 @@
     "content": "Officia dolor eiusmod cillum anim occaecat veniam labore nulla. Eu non amet ipsum consectetur officia incididunt ut. Qui Lorem magna magna dolore. Elit duis esse ex officia veniam culpa exercitation aute exercitation consequat. Voluptate elit dolore ullamco exercitation culpa. Exercitation deserunt cillum irure dolor reprehenderit proident incididunt consectetur enim ipsum consectetur eiusmod minim aliquip. Esse tempor sunt fugiat eiusmod occaecat nulla dolor.\r\n",
     "read": true,
     "deleted": false,
-    "type": "archived"
+    "type": "deleted"
   },
   "5da1b35fa651404506826dc4": {
     "id": "5da1b35fa651404506826dc4",
