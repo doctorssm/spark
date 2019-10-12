@@ -11,7 +11,7 @@ export enum AppActionTypes {
   UPDATE_EMAIL = '[App] Update Email',
   UPDATE_EMAIL_SUCCESS = '[App] Update Email Success',
   UPDATE_EMAIL_FAIL = '[App] Update Email Fail',
-  SET_ACTIVE_FOLDER = '[App] Set Active Folder',
+  SET_ACTIVE_EMAIL_TYPE = '[App] Set Active Email Type',
   SET_ACTIVE_EMAIL = '[App] Set Active Email'
 }
 
@@ -22,7 +22,7 @@ export type AppActions =
   | { type: AppActionTypes.UPDATE_EMAIL; emailId: string, email: Email }
   | { type: AppActionTypes.UPDATE_EMAIL_SUCCESS; email: Email }
   | { type: AppActionTypes.UPDATE_EMAIL_FAIL; }
-  | { type: AppActionTypes.SET_ACTIVE_FOLDER; emailType: EmailType }
+  | { type: AppActionTypes.SET_ACTIVE_EMAIL_TYPE; emailType: EmailType }
   | { type: AppActionTypes.SET_ACTIVE_EMAIL; emailId: string | null };
 
 export const initApp = (): any => async(dispatch: Dispatch) => {
@@ -87,13 +87,13 @@ export const updateEmailFail = (): AppActions => ({
   type: AppActionTypes.UPDATE_EMAIL_FAIL
 });
 
-export const setActiveFolderAction = (emailType: EmailType): any => async(dispatch: Dispatch) => {
-  dispatch(setActiveFolder(emailType));
+export const setActiveEmailTypeAction = (emailType: EmailType): any => async(dispatch: Dispatch) => {
+  dispatch(setActiveEmailType(emailType));
   dispatch(fetchEmails());
 };
 
-export const setActiveFolder = (emailType: EmailType): AppActions => ({
-  type: AppActionTypes.SET_ACTIVE_FOLDER,
+export const setActiveEmailType = (emailType: EmailType): AppActions => ({
+  type: AppActionTypes.SET_ACTIVE_EMAIL_TYPE,
   emailType
 });
 

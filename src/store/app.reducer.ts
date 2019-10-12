@@ -34,7 +34,7 @@ export const reducer = (state: AppState = initialState, action: AppActions): App
       return { ...state, emails };
     }
 
-    case AppActionTypes.SET_ACTIVE_FOLDER: {
+    case AppActionTypes.SET_ACTIVE_EMAIL_TYPE: {
       return { ...state, activeEmailType: action.emailType };
     }
 

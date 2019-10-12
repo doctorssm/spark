@@ -1,29 +1,35 @@
+import React, { useEffect, useState } from 'react'
+
 import { Dispatch } from 'redux';
 import { EmailType } from '../../enums';
 import { NavBar } from '../../components';
+import NavBarService from '../../services/navbar.service';
 import { NavItem } from '../../contracts';
-import React from 'react'
 import { connect } from 'react-redux';
-import { setActiveFolderAction } from '../../store/app.action';
+import { setActiveEmailTypeAction } from '../../store/app.action';
 
 interface SideBarContainerProps {
-  setActiveFolder: (type: EmailType) => void;
+  setActiveEmailType: (type: EmailType) => void;
 }
 
 const SideBarContainer: React.FC<SideBarContainerProps> = (props) => {
+  const [navBarItems, setNavBarItems] = useState<NavItem[]>([]);
+  useEffect(() => setNavBarItems(NavBarService.getNavItems()), [])
+
   const onActiveEmailTypeChange = (item: NavItem): void => {
-    props.setActiveFolder(item.type);
-  }
+    props.setActiveEmailType(item.type);
+
+  };
 
   return (
     <section className="side-bar">
-      <NavBar title={'Папки'} onItemClick={onActiveEmailTypeChange} />
+      <NavBar items={navBarItems} onItemClick={onActiveEmailTypeChange} />
     </section>
   )
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setActiveFolder: (type: EmailType) => dispatch(setActiveFolderAction(type))
+  setActiveEmailType: (type: EmailType) => dispatch(setActiveEmailTypeAction(type))
 });
 
 export default connect(

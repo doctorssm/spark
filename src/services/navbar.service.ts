@@ -36,7 +36,7 @@ export class NavBarService {
   ];
 
   getNavItems(): NavItem[]  {
-    return this.navItems;
+    return [...this.navItems];
   }
 
   addNavItem(): void {

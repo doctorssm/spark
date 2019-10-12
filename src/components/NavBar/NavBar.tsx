@@ -1,32 +1,20 @@
 import './NavBar.scss';
 
 import { NavBarList } from './NavBarList/NavBarList';
-import NavBarService from '../../services/navbar.service';
 import { NavItem } from '../../contracts';
 import React from 'react';
 
 interface NavBarProps {
-  title?: string;
+  items: NavItem[];
   onItemClick: (item: NavItem) => void;
 }
 
-export class NavBar extends React.Component<NavBarProps> {
-  state = {
-    items: []
-  };
+export const NavBar: React.FC<NavBarProps> = (props) => {
+  const { items, onItemClick } = props;
 
-  componentDidMount() {
-    this.setState({ items: NavBarService.getNavItems()});
-  }
-
-  render() {
-    const { items } = this.state;
-    const { title, onItemClick } = this.props;
-
-    return (
-      <nav className="navbar">
-        <NavBarList items={items} title={title} onItemClick={onItemClick} />
-      </nav>
-    )
-  }
+  return (
+    <nav className="navbar">
+      <NavBarList items={items} title={'Папки'} onItemClick={onItemClick} />
+    </nav>
+  )
 }
