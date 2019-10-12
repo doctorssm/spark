@@ -1,6 +1,9 @@
 import { AppState } from './app.reducer';
+import { orderBy } from 'lodash';
 
 export const getEmails = (state: AppState) => state.emails;
+
+export const getEmailsSortedByDate = (state: AppState) => orderBy(state.emails, 'date', 'desc');
 
 export const getActiveEmail = (state: AppState) => {
   return state.emails.find(email => email.id === state.activeEmailId);

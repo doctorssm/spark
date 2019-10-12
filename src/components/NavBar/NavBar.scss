@@ -20,6 +20,10 @@
   svg[data-icon="archive"] path {
     fill: $apple;
   }
+
+  svg[data-icon="trash-alt"] path {
+    fill: $cardinal;
+  }
 }
 
 .navbar-list-legend {

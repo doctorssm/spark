@@ -1,9 +1,7 @@
-import React from 'react'
 import { Email } from '../../contracts'
-import { EmailListItem } from './EmailListItem/EmailListItem'
-
-import './EmailList.scss';
 import { EmailListHeader } from './EmailListHeader/EmailListHeader';
+import { EmailListItem } from './EmailListItem/EmailListItem'
+import React from 'react'
 
 interface EmailListProps {
   header: string;
@@ -16,9 +14,9 @@ export const EmailList: React.FC<EmailListProps> = (props) => {
   const { header, icon, emails, onItemClick } = props;
 
   return (
-    <div className="list-email-wrapper">
+    <div className="bg-white full-height">
       <EmailListHeader header={header} icon={icon} />
-      <ul className="list-email">
+      <ul className="overflow-auto full-height">
         { emails
             .filter(email => !email.deleted)
             .map(email => <EmailListItem key={email.subject} email={email} onClick={onItemClick} />)

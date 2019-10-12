@@ -28,11 +28,6 @@ export class NavBarService {
       type: FolderType.Archive
     },
     {
-      title: 'Еще',
-      icon: 'ellipsis-h',
-      active: false,
-    },
-    {
       title: 'Корзина',
       icon: 'trash-alt',
       active: false,

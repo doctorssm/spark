@@ -46,6 +46,21 @@
   align-items: center;
 }
 
+// Overflow
+// -------------------------
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
 // Display Values
 // -------------------------
 

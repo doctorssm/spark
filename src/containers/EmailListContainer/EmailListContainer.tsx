@@ -1,12 +1,13 @@
-import React from 'react'
-import { Dispatch } from 'redux';
-import { Search, EmailList } from '../../components';
-import { Email } from '../../contracts';
-import { connect } from 'react-redux';
+import { EmailList, Search } from '../../components';
+import { getActiveFolderType, getEmailsSortedByDate } from '../../store/app.selector';
+
 import { AppState } from '../../store/app.reducer';
-import { getEmails, getActiveFolderType } from '../../store/app.selector';
-import { setActiveEmail } from '../../store/app.action';
+import { Dispatch } from 'redux';
+import { Email } from '../../contracts';
 import { FolderType } from '../../enums';
+import React from 'react'
+import { connect } from 'react-redux';
+import { setActiveEmail } from '../../store/app.action';
 
 interface EmailListContainerProps {
   emails: Email[];
@@ -52,7 +53,7 @@ const EmailListContainer: React.FC<EmailListContainerProps> = (props) => {
   // }
 
   return (
-    <section className="email-list-wrapper">
+    <section className="overflow-hidden">
       <Search />
       <div className="bg-white full-height">
         <EmailList emails={emails} header={getHeaderName()} icon={'paper-plane'} onItemClick={onEmailClick} />
@@ -62,7 +63,7 @@ const EmailListContainer: React.FC<EmailListContainerProps> = (props) => {
 }
 
 const mapStateToProps = (state: AppState) => ({
-  emails: getEmails(state),
+  emails: getEmailsSortedByDate(state),
   activeFolderType: getActiveFolderType(state)
 });
 
