@@ -1,48 +1,14 @@
-import { AppActionTypes, AppActions } from "./app.action";
+import { EmailsState, emailsReducer } from './emails/emails.reducer';
+import { NavbarState, navbarReducer } from './navbar/navbar.reducer';
 
-import { Email } from "../contracts";
-import { EmailType } from "../enums";
+import { combineReducers } from 'redux';
 
 export interface AppState {
-  emails: Email[];
-  activeEmailType: EmailType;
-  activeEmailId: string | null;
+  emails: EmailsState;
+  navbar: NavbarState;
 }
 
-export const initialState: AppState = {
-  emails: [],
-  activeEmailType: EmailType.Sent,
-  activeEmailId: null
-};
-
-export const reducer = (state: AppState = initialState, action: AppActions): AppState  => {
-  switch (action.type) {
-    case AppActionTypes.LOAD_EMAILS_SUCCESS: {
-      return { ...state, emails: action.emails };
-    }
-
-    case AppActionTypes.UPDATE_EMAIL_SUCCESS: {
-      const emails = [...state.emails];
-      const index = emails.findIndex(email => email.id === state.activeEmailId);
-
-      if (index === -1) {
-        return state;
-      }
-
-      emails[index] = action.email;
-
-      return { ...state, emails };
-    }
-
-    case AppActionTypes.SET_ACTIVE_EMAIL_TYPE: {
-      return { ...state, activeEmailType: action.emailType };
-    }
-
-    case AppActionTypes.SET_ACTIVE_EMAIL: {
-      return { ...state, activeEmailId: action.emailId };
-    }
-
-    default:
-      return state;
-  }
-};
+export const reducers = combineReducers<AppState>({
+  emails: emailsReducer,
+  navbar: navbarReducer
+});

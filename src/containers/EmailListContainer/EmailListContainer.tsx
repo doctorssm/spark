@@ -1,12 +1,13 @@
 import { EmailList, Search } from '../../components';
-import { getEmailsSortedByDate, getFolderName } from '../../store/app.selector';
 
 import { AppState } from '../../store/app.reducer';
 import { Dispatch } from 'redux';
 import { Email } from '../../contracts';
 import React from 'react'
 import { connect } from 'react-redux';
-import { setActiveEmail } from '../../store/app.action';
+import { getEmailsSortedByDate } from '../../store/emails/emails.selectors';
+import { getFolderName } from '../../store/navbar/navbar.selectors';
+import { setActiveEmail } from '../../store/emails/emails.actions';
 
 interface EmailListContainerProps {
   emails: Email[];

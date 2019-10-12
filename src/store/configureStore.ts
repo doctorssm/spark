@@ -1,29 +1,14 @@
-import thunk from 'redux-thunk';
+import { Middleware, applyMiddleware, compose, createStore } from 'redux';
+
 import freeze from 'redux-freeze';
-import { applyMiddleware, compose, createStore, Middleware, Store } from 'redux';
-
-import { reducer } from './app.reducer';
-// import { StoreState } from './entity';
-
-// export interface StoreConfiguration {
-//   store: Store<StoreState>;
-// }
-
-// TODO: move to custom.d.ts
-declare global {
-  interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: (...args: any[]) => () => any;
-  }
-}
+import { reducers } from './app.reducer';
+import thunk from 'redux-thunk';
 
 export const configureStore = () => {
-  const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+  const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
   const middlewares: Middleware[] = process.env.NODE_ENV === 'development' ? [thunk, freeze] : [thunk];
   const enhancer = composeEnhancers(applyMiddleware(...middlewares));
-  // const reducer = appReducer();
-
-  // const store = createStore(reducer, enhancer);
-  const store = createStore(reducer, enhancer);
+  const store = createStore(reducers, enhancer);
 
   return store;
 };

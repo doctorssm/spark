@@ -1,5 +1,5 @@
 import { EmailContent, EmailContentEmpty } from '../../components'
-import { setActiveEmail, update } from '../../store/app.action'
+import { setActiveEmail, updateEmailAction } from '../../store/emails/emails.actions';
 
 import { ActionType } from '../../enums'
 import { AppState } from '../../store/app.reducer'
@@ -7,7 +7,7 @@ import { Dispatch } from 'redux'
 import { Email } from '../../contracts'
 import React from 'react'
 import { connect } from 'react-redux'
-import { getActiveEmail } from '../../store/app.selector'
+import { getActiveEmail } from '../../store/emails/emails.selectors';
 
 interface EmailContentContainerProps {
   email: Email | undefined;
@@ -43,7 +43,7 @@ const mapStateToProps = (state: AppState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   setActiveEmail: (emailId: string | null) => dispatch(setActiveEmail(emailId)),
-  updateEmail: (updates: Partial<Email>) => dispatch(update(updates))
+  updateEmail: (updates: Partial<Email>) => dispatch(updateEmailAction(updates))
 });
 
 export default connect(

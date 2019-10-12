@@ -1,38 +1,41 @@
-import React, { useEffect, useState } from 'react'
-
+import { AppState } from '../../store/app.reducer';
 import { Dispatch } from 'redux';
 import { EmailType } from '../../enums';
 import { NavBar } from '../../components';
-import NavBarService from '../../services/navbar.service';
 import { NavItem } from '../../contracts';
+import React from 'react'
 import { connect } from 'react-redux';
-import { setActiveEmailTypeAction } from '../../store/app.action';
+import { getNavItems } from '../../store/navbar/navbar.selectors';
+import { selectNavItemAction } from '../../store/navbar/navbar.actions';
 
 interface SideBarContainerProps {
-  setActiveEmailType: (type: EmailType) => void;
+  navItems: NavItem[];
+  selectNavItem: (type: EmailType) => void;
 }
 
 const SideBarContainer: React.FC<SideBarContainerProps> = (props) => {
-  const [navBarItems, setNavBarItems] = useState<NavItem[]>([]);
-  useEffect(() => setNavBarItems(NavBarService.getNavItems()), [])
+  const { navItems, selectNavItem } = props;
 
   const onActiveEmailTypeChange = (item: NavItem): void => {
-    props.setActiveEmailType(item.type);
-
+    selectNavItem(item.type);
   };
 
   return (
     <section className="side-bar">
-      <NavBar items={navBarItems} onItemClick={onActiveEmailTypeChange} />
+      <NavBar items={navItems} onItemClick={onActiveEmailTypeChange} />
     </section>
   )
 }
 
+const mapStateToProps = (state: AppState) => ({
+  navItems: getNavItems(state),
+});
+
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setActiveEmailType: (type: EmailType) => dispatch(setActiveEmailTypeAction(type))
+  selectNavItem: (type: EmailType) => dispatch(selectNavItemAction(type))
 });
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(SideBarContainer);
