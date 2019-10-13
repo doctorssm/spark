@@ -14,7 +14,7 @@ export const EmailListHeader: React.FC<EmailListHeaderProps> = (props) => {
 
   return (
     <header className="list-header">
-      <FontAwesomeIcon icon={icon as IconProp} />
+      {icon && <FontAwesomeIcon icon={icon as IconProp} />}
       <span>{header}</span>
     </header>
   );

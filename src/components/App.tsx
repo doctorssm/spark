@@ -14,7 +14,9 @@ interface AppProps {
 }
 
 const App: React.FC<AppProps> = (props) => {
-  useEffect(props.init, []);
+  useEffect(() => {
+    props.init();
+  }, [props]);
 
   return (
     <div className="main">
