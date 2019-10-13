@@ -1,17 +1,28 @@
 import { AppState } from '../app.reducer';
+import { Email } from '../../contracts';
 import { EmailsState } from './emails.reducer';
+import { createSelector } from 'reselect'
 import { orderBy } from 'lodash';
 
-export const getEmails = (state: AppState) => state.emails.emails;
+export const getEmailsState = (state: AppState) => state.emails;
 
-export const getEmailsSortedByDate = (state: AppState) => orderBy(state.emails.emails, 'date', 'desc');
+export const getEmails = createSelector(
+  getEmailsState,
+  (state: EmailsState) => state.emails
+);
 
-// TODO: update to reselect lib
-export const getActiveEmail = (state: AppState) => {
-  return state.emails.emails.find(email => email.id === state.emails.activeEmailId);
-};
+export const getActiveEmailId = createSelector(
+  getEmailsState,
+  (state: EmailsState) => state.activeEmailId
+);
 
-export const getActiveEmailId = (state: AppState) => {
-  return state.emails.activeEmailId;
-};
+export const getEmailsSortedByDate = createSelector(
+  getEmails,
+  (emails: Email[]) => orderBy(emails, 'date', 'desc')
+);
 
+export const getActiveEmail = createSelector(
+  getEmails,
+  getActiveEmailId,
+  (emails: Email[], activeEmailId: string | null) => emails.find(email => email.id === activeEmailId)
+);

@@ -6,7 +6,7 @@ import { Email } from "../../contracts";
 import EmailService from '../../services/email.service';
 import { EmailsState } from "./emails.reducer";
 import { getActiveEmail } from "./emails.selectors";
-import { getActiveEmailType } from "../navbar/navbar.selectors";
+import { getActiveNavItemType } from "../navbar/navbar.selectors";
 
 export enum EmailsActionTypes {
   LOAD_EMAILS = '[Emails] Load Emails',
@@ -35,7 +35,7 @@ export const fetchEmails = (): any => async(dispatch: Dispatch, getState: () => 
   dispatch(loadEmails());
 
   try {
-    const emails = await EmailService.get(getActiveEmailType(getState()));
+    const emails = await EmailService.get(getActiveNavItemType(getState()));
     dispatch(loadEmailsSuccess(emails));
   } catch (error) {
     dispatch(loadEmailsFail());
