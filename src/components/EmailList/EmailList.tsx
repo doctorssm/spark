@@ -7,11 +7,12 @@ interface EmailListProps {
   header: string;
   icon?: string;
   emails: Email[];
+  activeEmailId: string | null;
   onItemClick: (emailId: string) => void;
 }
 
 export const EmailList: React.FC<EmailListProps> = (props) => {
-  const { header, icon, emails, onItemClick } = props;
+  const { header, icon, emails, activeEmailId, onItemClick } = props;
 
   return (
     <div className="bg-white full-height">
@@ -19,7 +20,7 @@ export const EmailList: React.FC<EmailListProps> = (props) => {
       <ul className="overflow-auto full-height">
         { emails
             .filter(email => !email.deleted)
-            .map(email => <EmailListItem key={email.subject} email={email} onClick={onItemClick} />)
+            .map(email => <EmailListItem key={email.id} email={email} activeEmailId={activeEmailId} onClick={onItemClick} />)
         }
       </ul>
     </div>

@@ -15,7 +15,7 @@ export const initialState: EmailsState = {
 export const emailsReducer = (state: EmailsState = initialState, action: EmailsActions): EmailsState  => {
   switch (action.type) {
     case EmailsActionTypes.LOAD_EMAILS_SUCCESS: {
-      return { ...state, emails: action.emails };
+      return { ...state, emails: action.emails, activeEmailId: null };
     }
 
     case EmailsActionTypes.UPDATE_EMAIL_SUCCESS: {

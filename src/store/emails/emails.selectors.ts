@@ -11,3 +11,7 @@ export const getActiveEmail = (state: AppState) => {
   return state.emails.emails.find(email => email.id === state.emails.activeEmailId);
 };
 
+export const getActiveEmailId = (state: AppState) => {
+  return state.emails.activeEmailId;
+};
+

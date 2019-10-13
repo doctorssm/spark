@@ -1,20 +1,26 @@
-import React from 'react'
-import { Email } from '../../../contracts'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import './EmailListItem.scss';
+
+import { Email } from '../../../contracts'
 import { EmailListItemTime } from '../EmailListItemTime/EmailListItemTime';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'
+import classNames from 'classnames';
 
 interface EmailListItemProps {
   email: Email;
+  activeEmailId: string | null;
   onClick: (emailId: string) => void;
 }
 
 export const EmailListItem: React.FC<EmailListItemProps> = (props) => {
-  const { email, onClick } = props;
+  const { email, activeEmailId, onClick } = props;
+
+  const isActive = (): boolean => {
+    return email.id === activeEmailId;
+  }
 
   return (
-    <li className="email-item" onClick={() => onClick(email.id)}>
+    <li className={classNames('email-item', { active: isActive() })} onClick={() => onClick(email.id)}>
       <div className="email-item-container">
         <div className="email-info">
           <div className="email-icon">

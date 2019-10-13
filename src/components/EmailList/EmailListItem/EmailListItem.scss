@@ -23,6 +23,11 @@
 
   &.active {
     background-color: $white-ice;
+    outline: 1px solid $primary;
+
+    .email-item-container {
+      border-bottom: 1px solid transparent;
+    }
   }
 
 
