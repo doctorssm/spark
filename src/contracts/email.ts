@@ -1,3 +1,5 @@
+import { EmailType } from "../enums";
+
 export interface Email {
   id: string;
   date: Date;
@@ -6,4 +8,5 @@ export interface Email {
   content: string;
   read: boolean;
   deleted: boolean;
+  type: EmailType;
 }

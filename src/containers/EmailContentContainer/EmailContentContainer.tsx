@@ -1,5 +1,4 @@
 import { EmailContent, EmailContentEmpty } from '../../components'
-import { setActiveEmail, updateEmailAction } from '../../store/emails/emails.actions';
 
 import { ActionType } from '../../enums'
 import { AppState } from '../../store/app.reducer'
@@ -8,31 +7,19 @@ import { Email } from '../../contracts'
 import React from 'react'
 import { connect } from 'react-redux'
 import { getActiveEmail } from '../../store/emails/emails.selectors';
+import { onActionClick } from '../../store/emails/emails.actions';
 
 interface EmailContentContainerProps {
   email: Email | undefined;
-  setActiveEmail: (emailId: string | null) => void;
-  updateEmail: (updates: Partial<Email>) => void;
+  actionClickHandler: (type: ActionType) => void;
 }
 
 const EmailContentContainer: React.FC<EmailContentContainerProps> = (props) => {
-  const { email, setActiveEmail, updateEmail } = props;
-
-  // TODO: is this correct place for this logic?
-  const onActionClick = (type: ActionType): void => {
-    switch (type) {
-      case ActionType.Close:
-        return setActiveEmail(null);
-      case ActionType.MarkAsRead:
-        return updateEmail({ read: !email!.read }); // TODO: !
-      case ActionType.Delete:
-        return updateEmail({ deleted: true });
-    }
-  }
+  const { email, actionClickHandler } = props;
 
   return (
     <section className="email-content-container">
-      { email ? <EmailContent email={email} onActionClick={onActionClick} /> : <EmailContentEmpty /> }
+      { email ? <EmailContent email={email} onActionClick={actionClickHandler} /> : <EmailContentEmpty /> }
     </section>
   )
 }
@@ -42,8 +29,7 @@ const mapStateToProps = (state: AppState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setActiveEmail: (emailId: string | null) => dispatch(setActiveEmail(emailId)),
-  updateEmail: (updates: Partial<Email>) => dispatch(updateEmailAction(updates))
+  actionClickHandler: (type: ActionType) => dispatch(onActionClick(type))
 });
 
 export default connect(

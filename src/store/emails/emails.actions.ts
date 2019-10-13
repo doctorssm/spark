@@ -1,8 +1,11 @@
+import { ActionType, EmailType } from "../../enums";
+
 import { AppState } from "../app.reducer";
 import { Dispatch } from "redux";
 import { Email } from "../../contracts";
 import EmailService from '../../services/email.service';
 import { EmailsState } from "./emails.reducer";
+import { getActiveEmail } from "./emails.selectors";
 import { getActiveEmailType } from "../navbar/navbar.selectors";
 
 export enum EmailsActionTypes {
@@ -52,7 +55,7 @@ export const loadEmailsFail = (): EmailsActions => ({
   type: EmailsActionTypes.LOAD_EMAILS_FAIL
 });
 
-export const updateEmailAction = (updates: Partial<Email>): any => async(dispatch: Dispatch, getState: () => AppState) => {
+export const updateEmailAction = (updates: Partial<Email>, action?: ActionType): any => async(dispatch: Dispatch, getState: () => AppState) => {
   const { emails } = getState();
   const email = emails.emails.find(email => email.id === emails.activeEmailId);
 
@@ -66,6 +69,10 @@ export const updateEmailAction = (updates: Partial<Email>): any => async(dispatc
   try {
     const updatedEmail = await EmailService.update(email.id, emailToUpdate);
     dispatch(updateEmailSuccess(updatedEmail));
+
+    if (action && action === ActionType.Delete) {
+      dispatch(setActiveEmail(null));
+    }
   } catch (error) {
     dispatch(updateEmailFail());
   }
@@ -90,3 +97,29 @@ export const setActiveEmail = (emailId: string | null): EmailsActions => ({
   type: EmailsActionTypes.SET_ACTIVE_EMAIL,
   emailId
 });
+
+export const onActionClick = (action: ActionType): any => async(dispatch: Dispatch, getState: () => AppState) => {
+  switch (action) {
+    case ActionType.Close: {
+      dispatch(setActiveEmail(null));
+      break;
+    }
+
+    case ActionType.MarkAsRead: {
+      const email = getActiveEmail(getState());
+
+      if (!email) {
+        break;
+      }
+
+      dispatch(updateEmailAction({ read: !email.read }));
+      break;
+    }
+
+    case ActionType.Delete: {
+      dispatch(updateEmailAction({ type: EmailType.Deleted }, action));
+      break;
+    }
+  }
+};
+

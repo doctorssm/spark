@@ -18,10 +18,7 @@ export const EmailList: React.FC<EmailListProps> = (props) => {
     <div className="bg-white full-height">
       <EmailListHeader header={header} icon={icon} />
       <ul className="overflow-auto full-height">
-        { emails
-            .filter(email => !email.deleted)
-            .map(email => <EmailListItem key={email.id} email={email} activeEmailId={activeEmailId} onClick={onItemClick} />)
-        }
+        { emails.map(email => <EmailListItem key={email.id} email={email} activeEmailId={activeEmailId} onClick={onItemClick} />) }
       </ul>
     </div>
   )

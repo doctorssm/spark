@@ -7,7 +7,7 @@ class EmailService {
 
   // TODO: rename to filters
   get(type: EmailType): Promise<Email[]> {
-    const queryParams = `?orderBy="type"&equalTo="${type || ''}"`;
+    const queryParams = `?orderBy="type"&equalTo="${type}"`;
 
     return axios.get<Email[]>(`${this.endpoint}.json${queryParams}`)
       .then(res => res.data)
