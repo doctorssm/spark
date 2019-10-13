@@ -1,4 +1,5 @@
 import { EmailList, Search } from '../../components';
+import { getFolderIcon, getFolderName } from '../../store/navbar/navbar.selectors';
 
 import { AppState } from '../../store/app.reducer';
 import { Dispatch } from 'redux';
@@ -6,42 +7,27 @@ import { Email } from '../../contracts';
 import React from 'react'
 import { connect } from 'react-redux';
 import { getEmailsSortedByDate } from '../../store/emails/emails.selectors';
-import { getFolderName } from '../../store/navbar/navbar.selectors';
 import { setActiveEmail } from '../../store/emails/emails.actions';
 
 interface EmailListContainerProps {
   emails: Email[];
-  activeFolder: string;
+  listIcon: string;
+  listHeader: string;
   setActiveEmail: (emailId: string) => void;
 }
 
 const EmailListContainer: React.FC<EmailListContainerProps> = (props) => {
-  const { emails, activeFolder, setActiveEmail } = props;
+  const { emails, listIcon, listHeader, setActiveEmail } = props;
 
   const onEmailClick = (emailId: string): void => {
     setActiveEmail(emailId);
   };
 
-  // const getHeaderIcon = () => {
-  //   switch(props.activeFolderType) {
-  //     case FolderType.Sent:
-  //       return 'paper-plane';
-  //     case FolderType.Drafts:
-  //       return 'file';
-  //     case FolderType.Marked:
-  //       return 'thumbtack';
-  //     case FolderType.Archive:
-  //       return 'archive';
-  //     default:
-  //       return '';
-  //   }
-  // }
-
   return (
     <section className="overflow-hidden">
       <Search />
       <div className="bg-white full-height">
-        <EmailList emails={emails} header={activeFolder} icon={'paper-plane'} onItemClick={onEmailClick} />
+        <EmailList emails={emails} header={listHeader} icon={listIcon} onItemClick={onEmailClick} />
       </div>
     </section>
   )
@@ -49,7 +35,8 @@ const EmailListContainer: React.FC<EmailListContainerProps> = (props) => {
 
 const mapStateToProps = (state: AppState) => ({
   emails: getEmailsSortedByDate(state),
-  activeFolder: getFolderName(state)
+  listIcon: getFolderIcon(state),
+  listHeader: getFolderName(state)
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
