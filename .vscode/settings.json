@@ -1,4 +1,8 @@
 {
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "prettier.disableLanguages": ["js"],
+  "files.autoSave": "onFocusChange",
   "tslint.nodePath": "node_modules\\tslint",
   "typescript.tsdk": "node_modules\\typescript\\lib",
   "search.exclude": {
@@ -16,7 +20,6 @@
   ],
   "html.format.wrapAttributes": "force-aligned",
   "html.format.endWithNewline": true,
-  "editor.formatOnSave": true,
   "npm.enableScriptExplorer": true,
   "typescript.preferences.quoteStyle": "single",
   "[typescript]": {
@@ -43,5 +46,17 @@
     "js": {},
     "css": ["scss"],
     "html": ["htm", "html"]
-  }
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    {
+      "language": "typescriptreact",
+      "autoFix": true
+    }
+  ]
 }

@@ -2,7 +2,9 @@ const { app, Menu } = require('electron');
 const isWindows = process.platform === 'win32';
 const { showConfirmDeleteDialog, showSaveDialog } = require('./dialogs');
 
-module.exports = { setMainMenu };
+module.exports = {
+  setMainMenu
+};
 
 function setMainMenu(mainWindow) {
   const template = [

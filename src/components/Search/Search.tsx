@@ -8,7 +8,7 @@ export class Search extends React.Component {
     return (
       <div className="search">
         <input type="search" placeholder="Search" />
-        <a href="mailto:" target="_blank" className="link-edit" title="Create">
+        <a href="mailto:" className="link-edit" title="Create">
           <FontAwesomeIcon icon={'pencil-alt'} />
         </a>
       </div>
