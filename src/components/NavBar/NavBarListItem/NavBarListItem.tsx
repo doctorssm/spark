@@ -1,15 +1,10 @@
 import React from 'react';
 
-import { NavBarItem } from '../NavBarItem/NavBarItem';
-import { NavItem } from '../../../contracts';
+import { NavBarItem, NavBarItemProps } from '../NavBarItem/NavBarItem';
 
 import './NavBarListItem.scss';
 
-interface NavBarListItemProps {
-  // TODO: extend?
-  item: NavItem;
-  onItemClick: (item: NavItem) => void;
-}
+interface NavBarListItemProps extends NavBarItemProps {}
 
 export const NavBarListItem: React.FC<NavBarListItemProps> = (props) => {
   const { item, onItemClick } = props;

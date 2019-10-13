@@ -3,11 +3,10 @@ import { EmailType } from '../enums';
 import axios from 'axios';
 
 class EmailService {
-  readonly endpoint: string = `https://spark-890bb.firebaseio.com/emails`; // ?orderBy="subject"&equalTo="Hello World"`;
+  readonly endpoint: string = `https://spark-890bb.firebaseio.com/emails`;
 
-  // TODO: rename to filters
   get(type: EmailType): Promise<Email[]> {
-    const queryParams = `?orderBy="type"&equalTo="${type}"`;
+    const queryParams = type ? `?orderBy="type"&equalTo="${type}"` : '';
 
     return axios
       .get<Email[]>(`${this.endpoint}.json${queryParams}`)

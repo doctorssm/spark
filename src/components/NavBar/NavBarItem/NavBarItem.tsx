@@ -7,7 +7,7 @@ import { NavItem } from '../../../contracts';
 
 import './NavBarItem.scss';
 
-interface NavBarItemProps {
+export interface NavBarItemProps {
   item: NavItem;
   onItemClick: (item: NavItem) => void;
 }

@@ -28,7 +28,7 @@ function showSaveDialog(browserWindow) {
   dialog.showSaveDialog(
     browserWindow,
     {
-      defaultPath: path.join(app.getPath('downloads'), 'email.txt') // TODO: add prefix or subject to email.txt to make it unique
+      defaultPath: path.join(app.getPath('downloads'), 'email.txt')
     },
     (fileName) => {
       if (fileName) {

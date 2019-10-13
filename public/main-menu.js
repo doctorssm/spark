@@ -30,7 +30,7 @@ function setMainMenu(mainWindow) {
       label: 'Сообщение',
       submenu: [
         {
-          label: 'Отметить как непрочитанное', // TODO: toggle text depends os status read && disable it if active email is not set
+          label: 'Отметить как непрочитанное',
           accelerator: isWindows ? 'Ctrl+U' : 'CmdOrU',
           click: () => mainWindow.webContents.send('action', 'toggleRead')
         },
@@ -44,8 +44,8 @@ function setMainMenu(mainWindow) {
         },
         {
           label: 'Удалить',
-          accelerator: isWindows ? 'Ctrl+D' : 'CmdOrD', // TODO: add correct shortcuts for MAc
-          click: () => mainWindow.webContents.send('action', 'delete') // showConfirmDeleteDialog(mainWindow) // TODO: depends on page: dialog or remove action
+          accelerator: isWindows ? 'Ctrl+D' : 'CmdOrD',
+          click: () => mainWindow.webContents.send('action', 'delete') // showConfirmDeleteDialog(mainWindow)
         }
       ]
     }
