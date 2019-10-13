@@ -8,21 +8,22 @@ let mainWindow;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 900,
+    width: 1150,
     height: 680,
-    show: false
+    show: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
   });
-  mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`);
-  // mainWindow.loadURL(url.format({
-  //   pathname: path.join(__dirname, '../build/index.html'),
-  //   protocol: 'file',
-  //   slashes: true
-  // }));
-  // mainWindow.loadURL(url.format({
-  //   pathname: 'localhost:3000',
-  //   protocol: 'http',
-  //   slashes: true
-  // }));
+
+  const endpoint = url.format({
+    pathname: isDev ? 'localhost:3000' : path.join(__dirname, '../build/index.html'),
+    protocol: isDev ? 'http' : 'file',
+    slashes: true
+  });
+
+  mainWindow.loadURL(endpoint);
+
   mainWindow.on('ready-to-show', () => mainWindow.show());
   mainWindow.on('closed', () => (mainWindow = null));
 

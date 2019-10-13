@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
@@ -9,6 +9,8 @@ import { EmailContent, EmailContentEmpty } from '../../components';
 import { Email } from '../../contracts';
 import { ActionType } from '../../enums';
 
+const { ipcRenderer } = window.require('electron');
+
 interface EmailContentContainerProps {
   email: Email | undefined;
   actionClickHandler: (type: ActionType) => void;
@@ -16,6 +18,12 @@ interface EmailContentContainerProps {
 
 const EmailContentContainer: React.FC<EmailContentContainerProps> = (props) => {
   const { email, actionClickHandler } = props;
+
+  useEffect(() => {
+    ipcRenderer.on('action', (e: Event, props: ActionType) => {
+      actionClickHandler(props);
+    });
+  }, [actionClickHandler]);
 
   return (
     <section className="email-content-container">

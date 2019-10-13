@@ -1,5 +1,5 @@
 export enum ActionType {
-  Close,
-  MarkAsRead,
-  Delete
+  Close = 'close',
+  ToggleRead = 'toggleRead',
+  Delete = 'delete'
 }

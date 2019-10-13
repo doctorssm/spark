@@ -107,7 +107,7 @@ export const onActionClick = (action: ActionType): any => async (dispatch: Dispa
       break;
     }
 
-    case ActionType.MarkAsRead: {
+    case ActionType.ToggleRead: {
       const email = getActiveEmail(getState());
 
       if (!email) {
