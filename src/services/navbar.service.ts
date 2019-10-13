@@ -38,10 +38,6 @@ export class NavBarService {
   getNavItems(): NavItem[] {
     return [...this.navItems];
   }
-
-  addNavItem(): void {
-    // TODO: to store?
-  }
 }
 
 export default new NavBarService();

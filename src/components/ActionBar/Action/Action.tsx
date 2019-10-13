@@ -14,18 +14,16 @@ interface ActionProps {
   onClick: (type: ActionType) => void;
 }
 
-export class Action extends React.Component<ActionProps> {
-  render() {
-    const { title, icon, type, onClick } = this.props;
+export const Action: React.FC<ActionProps> = (props) => {
+  const { title, icon, type, onClick } = props;
 
-    return (
-      <div
-        className={classNames('action', { close: type === ActionType.Close })}
-        title={title}
-        onClick={() => onClick(type)}
-      >
-        <FontAwesomeIcon icon={icon as IconProp} />
-      </div>
-    );
-  }
-}
+  return (
+    <div
+      className={classNames('action', { close: type === ActionType.Close })}
+      title={title}
+      onClick={() => onClick(type)}
+    >
+      <FontAwesomeIcon icon={icon as IconProp} />
+    </div>
+  );
+};

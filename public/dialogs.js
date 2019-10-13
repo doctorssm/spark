@@ -32,7 +32,7 @@ function showSaveDialog(browserWindow) {
     },
     (fileName) => {
       if (fileName) {
-        const message = 'Hello world!'; // JSON.stringify(process.getProcessMemoryInfo());
+        const message = 'Hello world!';
         fs.writeFile(fileName, message, 'utf8', (err) => {
           if (err) {
             dialog.showErrorBox('Возникла ошибка при сохранении письма', err.message);

@@ -9,15 +9,13 @@ interface EmailListHeaderProps {
   icon?: string;
 }
 
-export class EmailListHeader extends React.Component<EmailListHeaderProps> {
-  render() {
-    const { header, icon } = this.props;
+export const EmailListHeader: React.FC<EmailListHeaderProps> = (props) => {
+  const { header, icon } = props;
 
-    return (
-      <header className="list-header">
-        <FontAwesomeIcon icon={icon as IconProp} />
-        <span>{header}</span>
-      </header>
-    );
-  }
-}
+  return (
+    <header className="list-header">
+      <FontAwesomeIcon icon={icon as IconProp} />
+      <span>{header}</span>
+    </header>
+  );
+};

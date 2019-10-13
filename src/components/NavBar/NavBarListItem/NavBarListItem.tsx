@@ -8,18 +8,15 @@ import './NavBarListItem.scss';
 interface NavBarListItemProps {
   // TODO: extend?
   item: NavItem;
-  badge?: number;
   onItemClick: (item: NavItem) => void;
 }
 
-export class NavBarListItem extends React.Component<NavBarListItemProps> {
-  render() {
-    const { item, onItemClick } = this.props;
+export const NavBarListItem: React.FC<NavBarListItemProps> = (props) => {
+  const { item, onItemClick } = props;
 
-    return (
-      <li className="navbar-list-item">
-        <NavBarItem item={item} onItemClick={onItemClick} />
-      </li>
-    );
-  }
-}
+  return (
+    <li className="navbar-list-item">
+      <NavBarItem item={item} onItemClick={onItemClick} />
+    </li>
+  );
+};
