@@ -1,7 +1,8 @@
-import { Email } from '../../contracts'
+import { Email } from '../../contracts';
+import React from 'react';
+
 import { EmailListHeader } from './EmailListHeader/EmailListHeader';
-import { EmailListItem } from './EmailListItem/EmailListItem'
-import React from 'react'
+import { EmailListItem } from './EmailListItem/EmailListItem';
 
 interface EmailListProps {
   header: string;
@@ -18,8 +19,10 @@ export const EmailList: React.FC<EmailListProps> = (props) => {
     <div className="bg-white full-height">
       <EmailListHeader header={header} icon={icon} />
       <ul className="overflow-auto full-height">
-        { emails.map(email => <EmailListItem key={email.id} email={email} activeEmailId={activeEmailId} onClick={onItemClick} />) }
+        {emails.map((email) => (
+          <EmailListItem key={email.id} email={email} activeEmailId={activeEmailId} onClick={onItemClick} />
+        ))}
       </ul>
     </div>
-  )
-}
+  );
+};

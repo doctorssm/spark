@@ -1,0 +1,47 @@
+{
+  "tslint.nodePath": "node_modules\\tslint",
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/coverage": true
+  },
+  "cSpell.ignorePaths": [
+    "**/node_modules/**",
+    "**/vscode-extension/**",
+    "**/.git/**",
+    ".vscode",
+    "typings",
+    "package-lock.json"
+  ],
+  "html.format.wrapAttributes": "force-aligned",
+  "html.format.endWithNewline": true,
+  "editor.formatOnSave": true,
+  "npm.enableScriptExplorer": true,
+  "typescript.preferences.quoteStyle": "single",
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": false
+    }
+  },
+  "cSpell.words": [
+    "dropdown",
+    "dropdowns",
+    "guid",
+    "injectable",
+    "memoized",
+    "multiselect",
+    "ngrx",
+    "polyfill",
+    "polyfills",
+    "sprintf",
+    "truthy",
+  ],
+  "prettier.stylelintIntegration": true,
+  "prettier.tslintIntegration": false,
+  "beautify.language": {
+    "js": {},
+    "css": ["scss"],
+    "html": ["htm", "html"]
+  }
+}

@@ -1,0 +1,11 @@
+# A .prettierrc file, written in YAML
+# See https://prettier.io/docs/en/options.html for more about possible options.
+
+printWidth: 120
+tabWidth: 2
+useTabs: false
+semi: true
+singleQuote: true
+trailingComma: "none"
+bracketSpacing: true
+arrowParens: "always"

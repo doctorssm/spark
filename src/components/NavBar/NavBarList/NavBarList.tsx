@@ -1,8 +1,9 @@
-import './NavBarList.scss';
+import React from 'react';
 
 import { NavBarListItem } from '../NavBarListItem/NavBarListItem';
 import { NavItem } from '../../../contracts';
-import React from 'react'
+
+import './NavBarList.scss';
 
 interface NavBarListProps {
   title?: string;
@@ -17,8 +18,10 @@ export const NavBarList: React.FC<NavBarListProps> = (props) => {
     <>
       <div className="navbar-list-legend">{title}</div>
       <ul className="navbar-list">
-        {items.map(item => <NavBarListItem key={item.title} item={item} onItemClick={onItemClick} />)}
+        {items.map((item) => (
+          <NavBarListItem key={item.title} item={item} onItemClick={onItemClick} />
+        ))}
       </ul>
     </>
-  )
-}
+  );
+};

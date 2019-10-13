@@ -1,8 +1,9 @@
-import { AppState } from '../app.reducer';
-import { Email } from '../../contracts';
-import { EmailsState } from './emails.reducer';
-import { createSelector } from 'reselect'
 import { orderBy } from 'lodash';
+import { createSelector } from 'reselect';
+
+import { AppState } from '../app.reducer';
+import { EmailsState } from './emails.reducer';
+import { Email } from '../../contracts';
 
 export const getEmailsState = (state: AppState) => state.emails;
 
@@ -24,5 +25,5 @@ export const getEmailsSortedByDate = createSelector(
 export const getActiveEmail = createSelector(
   getEmails,
   getActiveEmailId,
-  (emails: Email[], activeEmailId: string | null) => emails.find(email => email.id === activeEmailId)
+  (emails: Email[], activeEmailId: string | null) => emails.find((email) => email.id === activeEmailId)
 );

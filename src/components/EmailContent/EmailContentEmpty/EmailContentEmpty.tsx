@@ -8,5 +8,5 @@ export const EmailContentEmpty: React.FC = () => {
     <div className="empty-email-content">
       <FontAwesomeIcon icon={'envelope'} />
     </div>
-  )
-}
+  );
+};

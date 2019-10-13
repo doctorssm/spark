@@ -1,10 +1,10 @@
-import './EmailContent.scss';
-
-import { ActionBar, ActionBarProps } from '../ActionBar/ActionBar';
-
-import { Email } from '../../contracts';
 import React from 'react';
 import classNames from 'classnames';
+
+import { ActionBar, ActionBarProps } from '../ActionBar/ActionBar';
+import { Email } from '../../contracts';
+
+import './EmailContent.scss';
 
 interface EmailContentProps extends ActionBarProps {
   email: Email;
@@ -27,6 +27,5 @@ export const EmailContent: React.FC<EmailContentProps> = (props) => {
         <div className="email-text">{email.content}</div>
       </div>
     </>
-  )
-}
-
+  );
+};

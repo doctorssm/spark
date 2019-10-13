@@ -1,13 +1,13 @@
-import { EmailContent, EmailContentEmpty } from '../../components'
+import React from 'react';
+import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
 
-import { ActionType } from '../../enums'
-import { AppState } from '../../store/app.reducer'
-import { Dispatch } from 'redux'
-import { Email } from '../../contracts'
-import React from 'react'
-import { connect } from 'react-redux'
 import { getActiveEmail } from '../../store/emails/emails.selectors';
 import { onActionClick } from '../../store/emails/emails.actions';
+import { AppState } from '../../store/app.reducer';
+import { EmailContent, EmailContentEmpty } from '../../components';
+import { Email } from '../../contracts';
+import { ActionType } from '../../enums';
 
 interface EmailContentContainerProps {
   email: Email | undefined;
@@ -19,10 +19,10 @@ const EmailContentContainer: React.FC<EmailContentContainerProps> = (props) => {
 
   return (
     <section className="email-content-container">
-      { email ? <EmailContent email={email} onActionClick={actionClickHandler} /> : <EmailContentEmpty /> }
+      {email ? <EmailContent email={email} onActionClick={actionClickHandler} /> : <EmailContentEmpty />}
     </section>
-  )
-}
+  );
+};
 
 const mapStateToProps = (state: AppState) => ({
   email: getActiveEmail(state)

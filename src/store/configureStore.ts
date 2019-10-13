@@ -1,8 +1,8 @@
 import { Middleware, applyMiddleware, compose, createStore } from 'redux';
-
 import freeze from 'redux-freeze';
-import { reducers } from './app.reducer';
 import thunk from 'redux-thunk';
+
+import { reducers } from './app.reducer';
 
 export const configureStore = () => {
   const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

@@ -35,7 +35,7 @@ export class NavBarService {
     }
   ];
 
-  getNavItems(): NavItem[]  {
+  getNavItems(): NavItem[] {
     return [...this.navItems];
   }
 

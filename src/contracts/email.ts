@@ -1,4 +1,4 @@
-import { EmailType } from "../enums";
+import { EmailType } from '../enums';
 
 export interface Email {
   id: string;

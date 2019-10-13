@@ -1,8 +1,9 @@
-import './NavBar.scss';
+import React from 'react';
 
 import { NavBarList } from './NavBarList/NavBarList';
 import { NavItem } from '../../contracts';
-import React from 'react';
+
+import './NavBar.scss';
 
 interface NavBarProps {
   items: NavItem[];
@@ -16,5 +17,5 @@ export const NavBar: React.FC<NavBarProps> = (props) => {
     <nav className="navbar">
       <NavBarList items={items} title={'Папки'} onItemClick={onItemClick} />
     </nav>
-  )
-}
+  );
+};

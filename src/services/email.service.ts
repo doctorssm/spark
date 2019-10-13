@@ -9,14 +9,14 @@ class EmailService {
   get(type: EmailType): Promise<Email[]> {
     const queryParams = `?orderBy="type"&equalTo="${type}"`;
 
-    return axios.get<Email[]>(`${this.endpoint}.json${queryParams}`)
-      .then(res => res.data)
-      .then(data => Object.values(data));
+    return axios
+      .get<Email[]>(`${this.endpoint}.json${queryParams}`)
+      .then((res) => res.data)
+      .then((data) => Object.values(data));
   }
 
   update(emailId: string, email: Email): Promise<Email> {
-    return axios.put<Email>(`${this.endpoint}/${emailId}.json`, email)
-      .then(res => res.data);
+    return axios.put<Email>(`${this.endpoint}/${emailId}.json`, email).then((res) => res.data);
   }
 }
 

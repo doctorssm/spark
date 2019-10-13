@@ -1,13 +1,13 @@
+import React from 'react';
+import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
 import { Email, NavItem } from '../../contracts';
 import { EmailList, Search } from '../../components';
-import { getActiveEmailId, getEmailsSortedByDate } from '../../store/emails/emails.selectors';
 
-import { AppState } from '../../store/app.reducer';
-import { Dispatch } from 'redux';
-import React from 'react'
-import { connect } from 'react-redux';
 import { getActiveNavItem } from '../../store/navbar/navbar.selectors';
+import { getActiveEmailId, getEmailsSortedByDate } from '../../store/emails/emails.selectors';
 import { setActiveEmail } from '../../store/emails/emails.actions';
+import { AppState } from '../../store/app.reducer';
 
 interface EmailListContainerProps {
   emails: Email[];
@@ -27,11 +27,17 @@ const EmailListContainer: React.FC<EmailListContainerProps> = (props) => {
     <section className="overflow-hidden">
       <Search />
       <div className="bg-white full-height">
-        <EmailList emails={emails} header={activeNavItem.title} icon={activeNavItem.icon} activeEmailId={activeEmailId} onItemClick={onEmailClick} />
+        <EmailList
+          emails={emails}
+          header={activeNavItem.title}
+          icon={activeNavItem.icon}
+          activeEmailId={activeEmailId}
+          onItemClick={onEmailClick}
+        />
       </div>
     </section>
-  )
-}
+  );
+};
 
 const mapStateToProps = (state: AppState) => ({
   emails: getEmailsSortedByDate(state),

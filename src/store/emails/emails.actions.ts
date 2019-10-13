@@ -1,12 +1,11 @@
-import { ActionType, EmailType } from "../../enums";
+import { Dispatch } from 'redux';
 
-import { AppState } from "../app.reducer";
-import { Dispatch } from "redux";
-import { Email } from "../../contracts";
 import EmailService from '../../services/email.service';
-import { EmailsState } from "./emails.reducer";
-import { getActiveEmail } from "./emails.selectors";
-import { getActiveNavItemType } from "../navbar/navbar.selectors";
+import { AppState } from '../app.reducer';
+import { getActiveEmail } from './emails.selectors';
+import { getActiveNavItemType } from '../navbar/navbar.selectors';
+import { Email } from '../../contracts';
+import { ActionType, EmailType } from '../../enums';
 
 export enum EmailsActionTypes {
   LOAD_EMAILS = '[Emails] Load Emails',
@@ -21,17 +20,17 @@ export enum EmailsActionTypes {
 export type EmailsActions =
   | { type: EmailsActionTypes.LOAD_EMAILS }
   | { type: EmailsActionTypes.LOAD_EMAILS_SUCCESS; emails: Email[] }
-  | { type: EmailsActionTypes.LOAD_EMAILS_FAIL; }
-  | { type: EmailsActionTypes.UPDATE_EMAIL; emailId: string, email: Email }
+  | { type: EmailsActionTypes.LOAD_EMAILS_FAIL }
+  | { type: EmailsActionTypes.UPDATE_EMAIL; emailId: string; email: Email }
   | { type: EmailsActionTypes.UPDATE_EMAIL_SUCCESS; email: Email }
-  | { type: EmailsActionTypes.UPDATE_EMAIL_FAIL; }
+  | { type: EmailsActionTypes.UPDATE_EMAIL_FAIL }
   | { type: EmailsActionTypes.SET_ACTIVE_EMAIL; emailId: string | null };
 
-export const initEmails = (): any => async(dispatch: Dispatch) => {
+export const initEmails = (): any => async (dispatch: Dispatch) => {
   dispatch(fetchEmails());
 };
 
-export const fetchEmails = (): any => async(dispatch: Dispatch, getState: () => AppState) => {
+export const fetchEmails = (): any => async (dispatch: Dispatch, getState: () => AppState) => {
   dispatch(loadEmails());
 
   try {
@@ -55,15 +54,18 @@ export const loadEmailsFail = (): EmailsActions => ({
   type: EmailsActionTypes.LOAD_EMAILS_FAIL
 });
 
-export const updateEmailAction = (updates: Partial<Email>, action?: ActionType): any => async(dispatch: Dispatch, getState: () => AppState) => {
+export const updateEmailAction = (updates: Partial<Email>, action?: ActionType): any => async (
+  dispatch: Dispatch,
+  getState: () => AppState
+) => {
   const { emails } = getState();
-  const email = emails.emails.find(email => email.id === emails.activeEmailId);
+  const email = emails.emails.find((email) => email.id === emails.activeEmailId);
 
   if (!email) {
     return;
   }
 
-  const emailToUpdate = {...email, ...updates};
+  const emailToUpdate = { ...email, ...updates };
   dispatch(updateEmail(email.id, emailToUpdate));
 
   try {
@@ -98,7 +100,7 @@ export const setActiveEmail = (emailId: string | null): EmailsActions => ({
   emailId
 });
 
-export const onActionClick = (action: ActionType): any => async(dispatch: Dispatch, getState: () => AppState) => {
+export const onActionClick = (action: ActionType): any => async (dispatch: Dispatch, getState: () => AppState) => {
   switch (action) {
     case ActionType.Close: {
       dispatch(setActiveEmail(null));
@@ -122,4 +124,3 @@ export const onActionClick = (action: ActionType): any => async(dispatch: Dispat
     }
   }
 };
-

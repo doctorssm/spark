@@ -1,10 +1,11 @@
-import './EmailListItem.scss';
-
-import { Email } from '../../../contracts'
-import { EmailListItemTime } from '../EmailListItemTime/EmailListItemTime';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react'
+import React from 'react';
 import classNames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { Email } from '../../../contracts';
+import { EmailListItemTime } from '../EmailListItemTime/EmailListItemTime';
+
+import './EmailListItem.scss';
 
 interface EmailListItemProps {
   email: Email;
@@ -17,10 +18,13 @@ export const EmailListItem: React.FC<EmailListItemProps> = (props) => {
 
   const isActive = (): boolean => {
     return email.id === activeEmailId;
-  }
+  };
 
   return (
-    <li className={classNames('email-item', { active: isActive(), read: email.read })} onClick={() => onClick(email.id)}>
+    <li
+      className={classNames('email-item', { active: isActive(), read: email.read })}
+      onClick={() => onClick(email.id)}
+    >
       <div className="email-item-container">
         <div className="email-info">
           <div className="email-icon">
@@ -33,5 +37,5 @@ export const EmailListItem: React.FC<EmailListItemProps> = (props) => {
         <div className="email-text">{email.content}</div>
       </div>
     </li>
-  )
-}
+  );
+};

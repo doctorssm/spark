@@ -1,13 +1,13 @@
-import './App.scss';
-
 import React, { useEffect } from 'react';
-
 import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
+
 import EmailContentContainer from '../containers/EmailContentContainer/EmailContentContainer';
 import EmailListContainer from '../containers/EmailListContainer/EmailListContainer';
 import SideBarContainer from '../containers/SideBarContainer/SideBarContainer';
-import { connect } from 'react-redux';
 import { initApp } from '../store/app.actions';
+
+import './App.scss';
 
 interface AppProps {
   init: () => void;
@@ -23,7 +23,7 @@ const App: React.FC<AppProps> = (props) => {
       <EmailContentContainer />
     </div>
   );
-}
+};
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   init: () => dispatch(initApp())

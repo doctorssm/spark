@@ -1,6 +1,5 @@
-import { EmailsActionTypes, EmailsActions } from "./emails.actions";
-
-import { Email } from "../../contracts";
+import { EmailsActionTypes, EmailsActions } from './emails.actions';
+import { Email } from '../../contracts';
 
 export interface EmailsState {
   emails: Email[];
@@ -12,7 +11,7 @@ export const initialState: EmailsState = {
   activeEmailId: null
 };
 
-export const emailsReducer = (state: EmailsState = initialState, action: EmailsActions): EmailsState  => {
+export const emailsReducer = (state: EmailsState = initialState, action: EmailsActions): EmailsState => {
   switch (action.type) {
     case EmailsActionTypes.LOAD_EMAILS_SUCCESS: {
       return { ...state, emails: action.emails, activeEmailId: null };
@@ -20,7 +19,7 @@ export const emailsReducer = (state: EmailsState = initialState, action: EmailsA
 
     case EmailsActionTypes.UPDATE_EMAIL_SUCCESS: {
       const emails = [...state.emails];
-      const index = emails.findIndex(email => email.id === state.activeEmailId);
+      const index = emails.findIndex((email) => email.id === state.activeEmailId);
 
       if (index === -1) {
         return state;
