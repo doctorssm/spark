@@ -12,7 +12,7 @@ function showConfirmDeleteDialog(browserWindow) {
     browserWindow,
     {
       type: 'info',
-      icon: nativeImage.createFromPath('./assets/spark-logo.jpg'),
+      icon: nativeImage.createFromPath('./assets/spark-logo.png'),
       message: 'Внимание',
       detail: 'Удалить это сообщение?',
       buttons: ['Да', 'Нет'],
