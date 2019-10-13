@@ -52,9 +52,9 @@ export const loadEmailsFail = (): EmailsActions => ({
   type: EmailsActionTypes.LOAD_EMAILS_FAIL
 });
 
-export const updateEmailAction = (updates: Partial<Email>): any => async(dispatch: Dispatch, getState: () => EmailsState) => {
-  const { emails, activeEmailId } = getState();
-  const email = emails.find(email => email.id === activeEmailId);
+export const updateEmailAction = (updates: Partial<Email>): any => async(dispatch: Dispatch, getState: () => AppState) => {
+  const { emails } = getState();
+  const email = emails.emails.find(email => email.id === emails.activeEmailId);
 
   if (!email) {
     return;

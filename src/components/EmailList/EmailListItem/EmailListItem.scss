@@ -12,6 +12,7 @@
 }
 
 .email-item {
+  position: relative;
   padding-left: 30px;
   padding-right: 15px;
   transition: background-color 0.1s;
@@ -84,5 +85,21 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+
+  &.read {
+    .email-info::before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 10px;
+
+      display: inline-block;
+      border: 1px solid $primary;
+      border-radius: 100%;
+
+      width: 6px;
+      height: 6px;
+    }
   }
 }
