@@ -30,6 +30,11 @@ export const emailsReducer = (state: EmailsState = initialState, action: EmailsA
       return { ...state, emails };
     }
 
+    case EmailsActionTypes.DELETE_EMAIL_SUCCESS: {
+      const emails = state.emails.filter((email) => email.id !== action.emailId);
+      return { ...state, emails, activeEmailId: null };
+    }
+
     case EmailsActionTypes.SET_ACTIVE_EMAIL: {
       return { ...state, activeEmailId: action.emailId };
     }

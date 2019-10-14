@@ -7,7 +7,7 @@ import { getActiveNavItemType } from '../navbar/navbar.selectors';
 import { Email } from '../../contracts';
 import { ActionType, EmailType } from '../../enums';
 
-const { ipcRenderer } = window.require('electron');
+// const { ipcRenderer } = window.require('electron');
 
 export enum EmailsActionTypes {
   LOAD_EMAILS = '[Emails] Load Emails',
@@ -16,6 +16,9 @@ export enum EmailsActionTypes {
   UPDATE_EMAIL = '[Emails] Update Email',
   UPDATE_EMAIL_SUCCESS = '[Emails] Update Email Success',
   UPDATE_EMAIL_FAIL = '[Emails] Update Email Fail',
+  DELETE_EMAIL = '[Emails] Delete Email',
+  DELETE_EMAIL_SUCCESS = '[Emails] Delete Email Success',
+  DELETE_EMAIL_FAIL = '[Emails] Delete Email Fail',
   SET_ACTIVE_EMAIL = '[Emails] Set Active Email'
 }
 
@@ -26,6 +29,9 @@ export type EmailsActions =
   | { type: EmailsActionTypes.UPDATE_EMAIL; emailId: string; email: Email }
   | { type: EmailsActionTypes.UPDATE_EMAIL_SUCCESS; email: Email }
   | { type: EmailsActionTypes.UPDATE_EMAIL_FAIL }
+  | { type: EmailsActionTypes.DELETE_EMAIL; emailId: string }
+  | { type: EmailsActionTypes.DELETE_EMAIL_SUCCESS; emailId: string }
+  | { type: EmailsActionTypes.DELETE_EMAIL_FAIL }
   | { type: EmailsActionTypes.SET_ACTIVE_EMAIL; emailId: string | null };
 
 export const initEmails = (): any => async (dispatch: Dispatch) => {
@@ -97,6 +103,32 @@ export const updateEmailFail = (): EmailsActions => ({
   type: EmailsActionTypes.UPDATE_EMAIL_FAIL
 });
 
+export const deleteEmailAction = (emailId: string): any => async (dispatch: Dispatch) => {
+  dispatch(deleteEmail(emailId));
+
+  try {
+    const updatedEmail = await EmailService.delete(emailId);
+    console.log('DELETE result', updatedEmail);
+    dispatch(deleteEmailSuccess(emailId));
+  } catch (error) {
+    dispatch(deleteEmailFail());
+  }
+};
+
+export const deleteEmail = (emailId: string): EmailsActions => ({
+  type: EmailsActionTypes.DELETE_EMAIL,
+  emailId
+});
+
+export const deleteEmailSuccess = (emailId: string): EmailsActions => ({
+  type: EmailsActionTypes.DELETE_EMAIL_SUCCESS,
+  emailId
+});
+
+export const deleteEmailFail = (): EmailsActions => ({
+  type: EmailsActionTypes.DELETE_EMAIL_FAIL
+});
+
 export const setActiveEmail = (emailId: string | null): EmailsActions => ({
   type: EmailsActionTypes.SET_ACTIVE_EMAIL,
   emailId
@@ -104,6 +136,7 @@ export const setActiveEmail = (emailId: string | null): EmailsActions => ({
 
 export const onActionClick = (action: ActionType): any => async (dispatch: Dispatch, getState: () => AppState) => {
   const email = getActiveEmail(getState());
+  const activeNavItemType = getActiveNavItemType(getState());
 
   switch (action) {
     case ActionType.Close: {
@@ -121,12 +154,14 @@ export const onActionClick = (action: ActionType): any => async (dispatch: Dispa
     }
 
     case ActionType.Delete: {
-      dispatch(updateEmailAction({ type: EmailType.Deleted }, action));
+      activeNavItemType === EmailType.Deleted
+        ? dispatch(deleteEmailAction(email!.id))
+        : dispatch(updateEmailAction({ type: EmailType.Deleted }, action));
       break;
     }
 
     case ActionType.Download: {
-      ipcRenderer.send('download', email);
+      // ipcRenderer.send('download', email);
       break;
     }
   }

@@ -17,6 +17,10 @@ class EmailService {
   update(emailId: string, email: Email): Promise<Email> {
     return axios.put<Email>(`${this.endpoint}/${emailId}.json`, email).then((res) => res.data);
   }
+
+  delete(emailId: string): Promise<null> {
+    return axios.delete<null>(`${this.endpoint}/${emailId}.json`).then((res) => res.data);
+  }
 }
 
 export default new EmailService();
