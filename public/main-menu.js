@@ -11,11 +11,6 @@ function setMainMenu(mainWindow) {
       label: isWindows ? 'Файл' : app.getName(),
       submenu: [
         {
-          label: 'Новое письмо',
-          accelerator: isWindows ? 'Ctrl+N' : 'CmdOrN',
-          click: () => null
-        },
-        {
           type: 'separator'
         },
         {
