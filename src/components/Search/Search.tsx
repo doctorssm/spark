@@ -6,7 +6,7 @@ import './Search.scss';
 export const Search: React.FC = () => {
   return (
     <div className="search">
-      <input type="search" placeholder="Search" />
+      <input type="search" placeholder="Search" disabled />
       <a href="mailto:" className="link-edit" title="Create">
         <FontAwesomeIcon icon={'pencil-alt'} />
       </a>
