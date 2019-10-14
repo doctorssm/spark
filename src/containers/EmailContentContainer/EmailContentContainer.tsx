@@ -12,7 +12,7 @@ import { ActionType } from '../../enums';
 const { ipcRenderer } = window.require('electron');
 
 interface EmailContentContainerProps {
-  email: Email | undefined;
+  email?: Email;
   actionClickHandler: (type: ActionType) => void;
 }
 

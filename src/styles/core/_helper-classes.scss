@@ -27,14 +27,6 @@
   float: right;
 }
 
-.clearfix {
-  &:after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-
 // Flex Box
 // -------------------------
 
