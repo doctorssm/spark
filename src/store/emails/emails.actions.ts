@@ -7,7 +7,7 @@ import { getActiveNavItemType } from '../navbar/navbar.selectors';
 import { Email } from '../../contracts';
 import { ActionType, EmailType } from '../../enums';
 
-// const { ipcRenderer } = window.require('electron');
+const { ipcRenderer } = window.require('electron');
 
 export enum EmailsActionTypes {
   LOAD_EMAILS = '[Emails] Load Emails',
@@ -107,8 +107,7 @@ export const deleteEmailAction = (emailId: string): any => async (dispatch: Disp
   dispatch(deleteEmail(emailId));
 
   try {
-    const updatedEmail = await EmailService.delete(emailId);
-    console.log('DELETE result', updatedEmail);
+    await EmailService.delete(emailId);
     dispatch(deleteEmailSuccess(emailId));
   } catch (error) {
     dispatch(deleteEmailFail());
@@ -161,7 +160,7 @@ export const onActionClick = (action: ActionType): any => async (dispatch: Dispa
     }
 
     case ActionType.Download: {
-      // ipcRenderer.send('download', email);
+      ipcRenderer.send('download', email);
       break;
     }
   }

@@ -23,7 +23,7 @@ export const EmailContent: React.FC<EmailContentProps> = (props) => {
         <div className="email-info">
           <div className="email-from-info">{email.from}</div>
         </div>
-        <div className="link mb-30 pointer">Кому: Sergii Bogush</div>
+        <div className="link mb-30 pointer inline-block">Кому: Sergii Bogush</div>
         <div className="email-text">{email.content}</div>
       </div>
     </>
