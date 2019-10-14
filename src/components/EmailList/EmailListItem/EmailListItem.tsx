@@ -22,7 +22,7 @@ export const EmailListItem: React.FC<EmailListItemProps> = (props) => {
 
   return (
     <li
-      className={classNames('email-item', { active: isActive(), read: email.read })}
+      className={classNames('email-item', { active: isActive(), unread: !email.read })}
       onClick={() => onClick(email.id)}
     >
       <div className="email-item-container">

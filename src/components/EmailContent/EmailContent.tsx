@@ -16,10 +16,10 @@ export const EmailContent: React.FC<EmailContentProps> = (props) => {
   return (
     <>
       <div className="mb-25">
-        <ActionBar onActionClick={onActionClick} />
+        <ActionBar isEmailRead={email.read} onActionClick={onActionClick} />
       </div>
       <div className="email-subject">{email.subject}</div>
-      <div className={classNames('email-content', { read: email.read })}>
+      <div className={classNames('email-content', { unread: !email.read })}>
         <div className="email-info">
           <div className="email-from-info">{email.from}</div>
         </div>

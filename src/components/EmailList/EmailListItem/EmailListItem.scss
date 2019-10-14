@@ -87,7 +87,7 @@
     overflow: hidden;
   }
 
-  &.read {
+  &.unread {
     .email-info::before {
       content: '';
       position: absolute;
