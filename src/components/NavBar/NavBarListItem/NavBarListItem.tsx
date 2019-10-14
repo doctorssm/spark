@@ -2,8 +2,6 @@ import React from 'react';
 
 import { NavBarItem, NavBarItemProps } from '../NavBarItem/NavBarItem';
 
-import './NavBarListItem.scss';
-
 interface NavBarListItemProps extends NavBarItemProps {}
 
 export const NavBarListItem: React.FC<NavBarListItemProps> = (props) => {
