@@ -1,6 +1,5 @@
 const { app, Menu } = require('electron');
 const isWindows = process.platform === 'win32';
-const { showConfirmDeleteDialog, showSaveDialog } = require('./dialogs');
 
 module.exports = {
   setMainMenu
@@ -36,11 +35,6 @@ function setMainMenu(mainWindow) {
         },
         {
           type: 'separator'
-        },
-        {
-          label: 'Сохранить',
-          accelerator: isWindows ? 'Ctrl+S' : 'CmdOrS',
-          click: () => showSaveDialog(mainWindow)
         },
         {
           label: 'Удалить',

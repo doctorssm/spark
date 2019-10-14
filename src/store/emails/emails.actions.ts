@@ -7,6 +7,8 @@ import { getActiveNavItemType } from '../navbar/navbar.selectors';
 import { Email } from '../../contracts';
 import { ActionType, EmailType } from '../../enums';
 
+const { ipcRenderer } = window.require('electron');
+
 export enum EmailsActionTypes {
   LOAD_EMAILS = '[Emails] Load Emails',
   LOAD_EMAILS_SUCCESS = '[Emails] Load Emails Success',
@@ -101,6 +103,8 @@ export const setActiveEmail = (emailId: string | null): EmailsActions => ({
 });
 
 export const onActionClick = (action: ActionType): any => async (dispatch: Dispatch, getState: () => AppState) => {
+  const email = getActiveEmail(getState());
+
   switch (action) {
     case ActionType.Close: {
       dispatch(setActiveEmail(null));
@@ -108,8 +112,6 @@ export const onActionClick = (action: ActionType): any => async (dispatch: Dispa
     }
 
     case ActionType.ToggleRead: {
-      const email = getActiveEmail(getState());
-
       if (!email) {
         break;
       }
@@ -120,6 +122,11 @@ export const onActionClick = (action: ActionType): any => async (dispatch: Dispa
 
     case ActionType.Delete: {
       dispatch(updateEmailAction({ type: EmailType.Deleted }, action));
+      break;
+    }
+
+    case ActionType.Download: {
+      ipcRenderer.send('download', email);
       break;
     }
   }

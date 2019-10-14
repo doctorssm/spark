@@ -15,6 +15,7 @@ export const ActionBar: React.FC<ActionBarProps> = (props) => {
       <Action icon={'times'} type={ActionType.Close} title={'Закрыть'} onClick={onActionClick} />
       <Action icon={'circle'} type={ActionType.ToggleRead} title={'Отметить как прочитанное'} onClick={onActionClick} />
       <Action icon={'trash-alt'} type={ActionType.Delete} title={'Удалить'} onClick={onActionClick} />
+      <Action icon={'file-download'} type={ActionType.Download} title={'Сохранить'} onClick={onActionClick} />
     </div>
   );
 };

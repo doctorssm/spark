@@ -1,8 +1,9 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const url = require('url');
 const isDev = require('electron-is-dev');
 const { setMainMenu } = require('./main-menu');
+const { showSaveDialog } = require('./dialogs');
 
 let mainWindow;
 
@@ -26,6 +27,7 @@ function createWindow() {
 
   mainWindow.on('ready-to-show', () => mainWindow.show());
   mainWindow.on('closed', () => (mainWindow = null));
+  ipcMain.on('download', (e, props) => showSaveDialog(mainWindow, props));
 
   setMainMenu(mainWindow);
 }
