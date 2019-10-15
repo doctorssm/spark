@@ -81,6 +81,7 @@ export const updateEmailAction = (updates: Partial<Email>, action?: ActionType):
     dispatch(updateEmailSuccess(updatedEmail));
 
     if (action && action === ActionType.Delete) {
+      dispatch(deleteEmailSuccess(email.id));
       dispatch(setActiveEmail(null));
     }
   } catch (error) {
