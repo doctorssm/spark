@@ -4,6 +4,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm run electron-dev`
+
+Runs the app in the electron development mode.<br />
+Open automatically
+
+The page will reload if you make edits.<br />
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
