@@ -5,11 +5,20 @@ import { EmailType } from '../../enums';
 export interface NavbarState {
   items: NavItem[];
   activeType: EmailType;
+  order: EmailType[];
 }
 
 export const initialState: NavbarState = {
   items: [],
-  activeType: EmailType.Sent
+  activeType: EmailType.Sent,
+  order: [
+    //
+    EmailType.Sent,
+    EmailType.Drafts,
+    EmailType.Marked,
+    EmailType.Archived,
+    EmailType.Deleted
+  ]
 };
 
 export const navbarReducer = (state: NavbarState = initialState, action: NavbarActions): NavbarState => {

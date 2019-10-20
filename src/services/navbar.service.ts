@@ -1,37 +1,15 @@
-import { EmailType } from '../enums';
+import axios from 'axios';
+
 import { NavItem } from '../contracts';
 
 export class NavBarService {
-  private navItems: NavItem[] = [
-    {
-      title: 'Отправленные',
-      icon: 'paper-plane',
-      type: EmailType.Sent
-    },
-    {
-      title: 'Черновики',
-      icon: 'file',
-      type: EmailType.Drafts
-    },
-    {
-      title: 'Отмеченные',
-      icon: 'thumbtack',
-      type: EmailType.Marked
-    },
-    {
-      title: 'Архив',
-      icon: 'archive',
-      type: EmailType.Archived
-    },
-    {
-      title: 'Корзина',
-      icon: 'trash-alt',
-      type: EmailType.Deleted
-    }
-  ];
+  readonly endpoint: string = `https://spark-890bb.firebaseio.com/nav-items.json`;
 
-  getNavItems(): NavItem[] {
-    return [...this.navItems];
+  get(): Promise<NavItem[]> {
+    return axios
+      .get<NavItem[]>(this.endpoint)
+      .then((res) => res.data)
+      .then((data) => Object.values(data));
   }
 }
 

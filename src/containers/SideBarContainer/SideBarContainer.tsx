@@ -2,7 +2,7 @@ import React from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
-import { getNavItems, getActiveNavItem } from '../../store/navbar/navbar.selectors';
+import { getNavItems, getActiveNavItem, getOrderedNavItems } from '../../store/navbar/navbar.selectors';
 import { selectNavItemAction } from '../../store/navbar/navbar.actions';
 import { AppState } from '../../store/app.reducer';
 import { NavBar } from '../../components';
@@ -30,7 +30,7 @@ const SideBarContainer: React.FC<SideBarContainerProps> = (props) => {
 };
 
 const mapStateToProps = (state: AppState) => ({
-  navItems: getNavItems(state),
+  navItems: getOrderedNavItems(state),
   activeItem: getActiveNavItem(state)
 });
 

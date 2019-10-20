@@ -14,8 +14,9 @@ export type NavbarActions =
   | { type: NavbarActionTypes.SET_NAV_ITEMS; items: NavItem[] }
   | { type: NavbarActionTypes.SELECT_NAV_ITEM; emailType: EmailType };
 
-export const initNavbar = (): any => (dispatch: Dispatch) => {
-  dispatch(setNavItems(NavbarService.getNavItems()));
+export const initNavbar = (): any => async (dispatch: Dispatch) => {
+  const navItems = await NavbarService.get();
+  dispatch(setNavItems(navItems));
 };
 
 export const setNavItems = (items: NavItem[]): NavbarActions => ({

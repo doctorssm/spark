@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import { keyBy } from 'lodash';
 
 import { AppState } from '../app.reducer';
 import { NavbarState } from './navbar.reducer';
@@ -15,6 +16,24 @@ export const getNavItems = createSelector(
 export const getActiveNavItemType = createSelector(
   getNavbarState,
   (state: NavbarState) => state.activeType
+);
+
+export const getNavItemsOrder = createSelector(
+  getNavbarState,
+  (state: NavbarState) => state.order
+);
+
+export const getOrderedNavItems = createSelector(
+  getNavItems,
+  getNavItemsOrder,
+  (items: NavItem[], order: EmailType[]) => {
+    if (items.length === 0) {
+      return [];
+    }
+
+    const dictionary = keyBy(items, 'type');
+    return order.map((type) => dictionary[type]);
+  }
 );
 
 export const getActiveNavItem = createSelector(
