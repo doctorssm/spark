@@ -1,9 +1,5 @@
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
 
-import { getActiveEmail } from '../../store/emails/emails.selectors';
-import { onActionClick } from '../../store/emails/emails.actions';
-import { AppState } from '../../store/app.reducer';
 import { EmailContent, EmailContentEmpty } from '../../components';
 import { Email } from '../../contracts';
 import { ActionType } from '../../enums';
@@ -31,15 +27,4 @@ const EmailContentContainer: React.FC<EmailContentContainerProps> = (props) => {
   );
 };
 
-const mapStateToProps = (state: AppState) => ({
-  email: getActiveEmail(state)
-});
-
-const mapDispatchToProps = {
-  onActionClick
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(EmailContentContainer);
+export default EmailContentContainer;

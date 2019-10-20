@@ -1,3 +1,3 @@
-export * from './SideBarContainer/SideBarContainer';
-export * from './EmailListContainer/EmailListContainer';
-export * from './EmailContentContainer/EmailContentContainer';
+export * from './SideBarContainer';
+export * from './EmailListContainer';
+export * from './EmailContentContainer';

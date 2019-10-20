@@ -1,9 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
-import { getActiveNavItem, getOrderedNavItems } from '../../store/navbar/navbar.selectors';
-import { selectNavItemAction } from '../../store/navbar/navbar.actions';
-import { AppState } from '../../store/app.reducer';
 import { NavBar } from '../../components';
 import { NavItem } from '../../contracts';
 import { EmailType } from '../../enums';
@@ -28,16 +24,4 @@ const SideBarContainer: React.FC<SideBarContainerProps> = (props) => {
   );
 };
 
-const mapStateToProps = (state: AppState) => ({
-  navItems: getOrderedNavItems(state),
-  activeItem: getActiveNavItem(state)
-});
-
-const mapDispatchToProps = {
-  selectNavItemAction
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SideBarContainer);
+export default SideBarContainer;
