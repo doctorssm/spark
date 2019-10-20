@@ -1,8 +1,7 @@
 import React from 'react';
-import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
-import { getNavItems, getActiveNavItem, getOrderedNavItems } from '../../store/navbar/navbar.selectors';
+import { getActiveNavItem, getOrderedNavItems } from '../../store/navbar/navbar.selectors';
 import { selectNavItemAction } from '../../store/navbar/navbar.actions';
 import { AppState } from '../../store/app.reducer';
 import { NavBar } from '../../components';
@@ -12,14 +11,14 @@ import { EmailType } from '../../enums';
 interface SideBarContainerProps {
   navItems: NavItem[];
   activeItem: NavItem;
-  selectNavItem: (type: EmailType) => void;
+  selectNavItemAction: (type: EmailType) => void;
 }
 
 const SideBarContainer: React.FC<SideBarContainerProps> = (props) => {
-  const { navItems, activeItem, selectNavItem } = props;
+  const { navItems, activeItem, selectNavItemAction } = props;
 
   const onActiveEmailTypeChange = (item: NavItem): void => {
-    selectNavItem(item.type);
+    selectNavItemAction(item.type);
   };
 
   return (
@@ -34,9 +33,9 @@ const mapStateToProps = (state: AppState) => ({
   activeItem: getActiveNavItem(state)
 });
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  selectNavItem: (type: EmailType) => dispatch(selectNavItemAction(type))
-});
+const mapDispatchToProps = {
+  selectNavItemAction
+};
 
 export default connect(
   mapStateToProps,

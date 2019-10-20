@@ -1,5 +1,4 @@
 import React from 'react';
-import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import { Email, NavItem } from '../../contracts';
 import { EmailList, Search } from '../../components';
@@ -45,9 +44,9 @@ const mapStateToProps = (state: AppState) => ({
   activeNavItem: getActiveNavItem(state)
 });
 
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setActiveEmail: (emailId: string) => dispatch(setActiveEmail(emailId))
-});
+const mapDispatchToProps = {
+  setActiveEmail
+};
 
 export default connect(
   mapStateToProps,
