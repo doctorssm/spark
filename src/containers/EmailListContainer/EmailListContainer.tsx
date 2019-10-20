@@ -1,6 +1,7 @@
 import React from 'react';
-import { Email, NavItem } from '../../contracts';
-import { EmailList, Search } from '../../components';
+
+import { EmailList, Search } from 'components';
+import { Email, NavItem } from 'contracts';
 
 interface EmailListContainerProps {
   emails: Email[];

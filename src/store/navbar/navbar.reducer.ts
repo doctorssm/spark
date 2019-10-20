@@ -1,6 +1,6 @@
 import { NavbarActionTypes, NavbarActions } from './navbar.actions';
-import { NavItem } from '../../contracts';
-import { EmailType } from '../../enums';
+import { NavItem } from 'contracts';
+import { EmailType } from 'enums';
 
 export interface NavbarState {
   items: NavItem[];

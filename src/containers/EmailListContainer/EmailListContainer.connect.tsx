@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 
 import EmailListContainer from './EmailListContainer';
-import { AppState } from '../../store/app.reducer';
-import { getEmailsSortedByDate, getActiveEmailId } from '../../store/emails/emails.selectors';
-import { getActiveNavItem } from '../../store/navbar/navbar.selectors';
-import { setActiveEmail } from '../../store/emails/emails.actions';
+import { AppState } from 'store/app.reducer';
+import { getEmailsSortedByDate, getActiveEmailId } from 'store/emails/emails.selectors';
+import { getActiveNavItem } from 'store/navbar/navbar.selectors';
+import { setActiveEmail } from 'store/emails/emails.actions';
 
 const mapStateToProps = (state: AppState) => ({
   emails: getEmailsSortedByDate(state),

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import { Email } from '../contracts';
-import { EmailType } from '../enums';
+import { Email } from 'contracts';
+import { EmailType } from 'enums';
 
 class EmailService {
   readonly endpoint: string = `https://spark-890bb.firebaseio.com/emails`;

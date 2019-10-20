@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { NavBarListItem } from '../NavBarListItem/NavBarListItem';
-import { NavItem } from '../../../contracts';
+import { NavBarListItem } from 'components';
+import { NavItem } from 'contracts';
 
 import './NavBarList.scss';
 

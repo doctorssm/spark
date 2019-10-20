@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { ActionBar, ActionBarProps } from '../ActionBar/ActionBar';
-import { Email } from '../../contracts';
+import { ActionBar, ActionBarProps } from 'components';
+import { Email } from 'contracts';
 
 import './EmailContent.scss';
 

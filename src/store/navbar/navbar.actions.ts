@@ -1,9 +1,9 @@
 import { Dispatch } from 'redux';
 
-import { NavbarService } from '../../services';
-import { fetchEmails } from '../emails/emails.actions';
-import { NavItem } from '../../contracts';
-import { EmailType } from '../../enums';
+import { fetchEmails } from 'store/emails/emails.actions';
+import { NavbarService } from 'services';
+import { NavItem } from 'contracts';
+import { EmailType } from 'enums';
 
 export enum NavbarActionTypes {
   SET_NAV_ITEMS = '[Navbar] Set Nav Items',

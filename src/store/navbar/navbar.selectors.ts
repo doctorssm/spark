@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect';
 import { keyBy } from 'lodash';
 
-import { AppState } from '../app.reducer';
-import { NavItem } from '../../contracts';
-import { EmailType } from '../../enums';
+import { AppState } from 'store/app.reducer';
+import { NavItem } from 'contracts';
+import { EmailType } from 'enums';
 
 export const getNavbarState = (state: AppState) => state.navbar;
 

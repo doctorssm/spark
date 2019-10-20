@@ -1,8 +1,8 @@
 import { orderBy } from 'lodash';
 import { createSelector } from 'reselect';
 
-import { AppState } from '../app.reducer';
-import { Email } from '../../contracts';
+import { AppState } from 'store/app.reducer';
+import { Email } from 'contracts';
 
 export const getEmailsState = (state: AppState) => state.emails;
 

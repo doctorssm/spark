@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { NavItem } from '../../../contracts';
+import { NavItem } from 'contracts';
 
 import './NavBarItem.scss';
 

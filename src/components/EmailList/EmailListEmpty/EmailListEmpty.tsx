@@ -1,6 +1,6 @@
 import React from 'react';
 
-import backgroundImg from '../../../assets/img/wood.png';
+import backgroundImg from 'assets/img/wood.png';
 
 import './EmailListEmpty.scss';
 

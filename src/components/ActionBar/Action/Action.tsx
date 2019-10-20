@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
-import { ActionType } from '../../../enums';
+import { ActionType } from 'enums';
 
 import './Action.scss';
 

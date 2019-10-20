@@ -2,8 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Email } from '../../../contracts';
-import { EmailListItemTime } from '../EmailListItemTime/EmailListItemTime';
+import { EmailListItemTime } from 'components';
+import { Email } from 'contracts';
 
 import './EmailListItem.scss';
 

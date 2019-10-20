@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 
-import { EmailContent, EmailContentEmpty } from '../../components';
-import { Email } from '../../contracts';
-import { ActionType } from '../../enums';
+import { EmailContent, EmailContentEmpty } from 'components';
+import { Email } from 'contracts';
+import { ActionType } from 'enums';
 
 const { ipcRenderer } = window.require('electron');
 

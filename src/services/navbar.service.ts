@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { NavItem } from '../contracts';
+import { NavItem } from 'contracts';
 
 export class NavBarService {
   readonly endpoint: string = `https://spark-890bb.firebaseio.com/nav-items.json`;

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Action } from './Action/Action';
-import { ActionType } from '../../enums';
+import { Action } from 'components';
+import { ActionType } from 'enums';
 
 export interface ActionBarProps {
   isEmailRead?: boolean;

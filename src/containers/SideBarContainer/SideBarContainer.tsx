@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { NavBar } from '../../components';
-import { NavItem } from '../../contracts';
-import { EmailType } from '../../enums';
+import { NavBar } from 'components';
+import { NavItem } from 'contracts';
+import { EmailType } from 'enums';
 
 interface SideBarContainerProps {
   navItems: NavItem[];

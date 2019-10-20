@@ -1,11 +1,11 @@
 import { Dispatch } from 'redux';
 
-import { EmailService } from '../../services';
-import { AppState } from '../app.reducer';
+import { AppState } from 'store/app.reducer';
 import { getActiveEmail } from './emails.selectors';
-import { getActiveNavItemType } from '../navbar/navbar.selectors';
-import { Email } from '../../contracts';
-import { ActionType, EmailType } from '../../enums';
+import { getActiveNavItemType } from 'store/navbar/navbar.selectors';
+import { EmailService } from 'services';
+import { Email } from 'contracts';
+import { ActionType, EmailType } from 'enums';
 
 const { ipcRenderer } = window.require('electron');
 

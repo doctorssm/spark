@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { NavBarItem, NavBarItemProps } from '../NavBarItem/NavBarItem';
+import { NavBarItem, NavBarItemProps } from 'components';
 
 interface NavBarListItemProps extends NavBarItemProps {}
 
