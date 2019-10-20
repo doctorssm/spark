@@ -2,20 +2,12 @@ import { orderBy } from 'lodash';
 import { createSelector } from 'reselect';
 
 import { AppState } from '../app.reducer';
-import { EmailsState } from './emails.reducer';
 import { Email } from '../../contracts';
 
 export const getEmailsState = (state: AppState) => state.emails;
 
-export const getEmails = createSelector(
-  getEmailsState,
-  (state: EmailsState) => state.emails
-);
-
-export const getActiveEmailId = createSelector(
-  getEmailsState,
-  (state: EmailsState) => state.activeEmailId
-);
+export const getEmails = (state: AppState) => getEmailsState(state).emails;
+export const getActiveEmailId = (state: AppState) => getEmailsState(state).activeEmailId;
 
 export const getEmailsSortedByDate = createSelector(
   getEmails,

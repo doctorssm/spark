@@ -2,26 +2,14 @@ import { createSelector } from 'reselect';
 import { keyBy } from 'lodash';
 
 import { AppState } from '../app.reducer';
-import { NavbarState } from './navbar.reducer';
 import { NavItem } from '../../contracts';
 import { EmailType } from '../../enums';
 
 export const getNavbarState = (state: AppState) => state.navbar;
 
-export const getNavItems = createSelector(
-  getNavbarState,
-  (state: NavbarState) => state.items
-);
-
-export const getActiveNavItemType = createSelector(
-  getNavbarState,
-  (state: NavbarState) => state.activeType
-);
-
-export const getNavItemsOrder = createSelector(
-  getNavbarState,
-  (state: NavbarState) => state.order
-);
+export const getNavItems = (state: AppState) => getNavbarState(state).items;
+export const getActiveNavItemType = (state: AppState) => getNavbarState(state).activeType;
+export const getNavItemsOrder = (state: AppState) => getNavbarState(state).order;
 
 export const getOrderedNavItems = createSelector(
   getNavItems,
