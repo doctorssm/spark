@@ -1,2 +1,2 @@
-export * from './navbar.service';
-export * from './email.service';
+export { default as NavbarService } from './navbar.service';
+export { default as EmailService } from './email.service';

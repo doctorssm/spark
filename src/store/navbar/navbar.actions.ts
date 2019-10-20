@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 
-import NavbarService from '../../services/navbar.service';
+import { NavbarService } from '../../services';
 import { fetchEmails } from '../emails/emails.actions';
 import { NavItem } from '../../contracts';
 import { EmailType } from '../../enums';

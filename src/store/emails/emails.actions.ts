@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux';
 
-import EmailService from '../../services/email.service';
+import { EmailService } from '../../services';
 import { AppState } from '../app.reducer';
 import { getActiveEmail } from './emails.selectors';
 import { getActiveNavItemType } from '../navbar/navbar.selectors';

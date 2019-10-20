@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
 
-import EmailContentContainer from '../containers/EmailContentContainer';
-import EmailListContainer from '../containers/EmailListContainer';
-import SideBarContainer from '../containers/SideBarContainer';
+import { SideBarContainer, EmailListContainer, EmailContentContainer } from '../containers';
 import { initApp } from '../store/app.actions';
 
 import './App.scss';
