@@ -6,31 +6,26 @@ export class NavBarService {
     {
       title: 'Отправленные',
       icon: 'paper-plane',
-      active: true,
       type: EmailType.Sent
     },
     {
       title: 'Черновики',
       icon: 'file',
-      active: false,
       type: EmailType.Drafts
     },
     {
       title: 'Отмеченные',
       icon: 'thumbtack',
-      active: false,
       type: EmailType.Marked
     },
     {
       title: 'Архив',
       icon: 'archive',
-      active: false,
       type: EmailType.Archived
     },
     {
       title: 'Корзина',
       icon: 'trash-alt',
-      active: false,
       type: EmailType.Deleted
     }
   ];

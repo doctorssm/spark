@@ -12,12 +12,13 @@ export const getNavItems = createSelector(
   (state: NavbarState) => state.items
 );
 
-export const getActiveNavItem = createSelector(
-  getNavItems,
-  (items: NavItem[]) => items.find((item) => item.active) || ({} as NavItem)
+export const getActiveNavItemType = createSelector(
+  getNavbarState,
+  (state: NavbarState) => state.activeType
 );
 
-export const getActiveNavItemType = createSelector(
-  getActiveNavItem,
-  (item: NavItem) => item.type || EmailType.Sent
+export const getActiveNavItem = createSelector(
+  getNavItems,
+  getActiveNavItemType,
+  (items: NavItem[], activeType: EmailType) => items.find((item) => item.type === activeType) || ({} as NavItem)
 );
