@@ -19,7 +19,7 @@ export const Action: React.FC<ActionProps> = (props) => {
 
   return (
     <div
-      className={classNames('action', { close: type === ActionType.Close })}
+      className={classNames('action', { 'action-close': type === ActionType.Close })}
       title={title}
       onClick={() => onClick(type)}
     >

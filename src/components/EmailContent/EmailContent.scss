@@ -1,26 +1,20 @@
 @import '~styles/core/variables';
 
-.email-content {
-  background-color: $white;
-  border-radius: 3px;
-  box-shadow: -1px 1px 4px $alto;
-  padding: 15px 15px 30px 30px;
-}
+.container-email-content {
+  .email-box {
+    background-color: $white;
+    border-radius: 3px;
+    box-shadow: -1px 1px 4px $alto;
+    padding: 15px 15px 30px 30px;
+  }
 
-.email-subject {
-  font-weight: bold;
-  margin-bottom: 15px;
-  font-size: 15px;
-}
+  .email-subject {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 15px;
+  }
 
-.email-from-info {
-  position: relative;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.unread {
-  .email-from-info::before {
+  .unread::before {
     content: '';
     position: absolute;
     top: 4px;

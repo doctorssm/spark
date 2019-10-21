@@ -21,12 +21,9 @@ export const EmailListItem: React.FC<EmailListItemProps> = (props) => {
   };
 
   return (
-    <li
-      className={classNames('email-item', { active: isActive(), unread: !email.read })}
-      onClick={() => onClick(email.id)}
-    >
-      <div className="email-item-container">
-        <div className="email-info">
+    <li className={classNames('email-item', { active: isActive() })} onClick={() => onClick(email.id)}>
+      <div className="email-item-box">
+        <div className={classNames('flex full-width mb-10', { 'email-unread': !email.read })}>
           <div className="email-icon">
             <FontAwesomeIcon icon={'user'} />
           </div>
@@ -34,7 +31,7 @@ export const EmailListItem: React.FC<EmailListItemProps> = (props) => {
           <EmailListItemTime date={new Date(email.date)} />
         </div>
         <div className="email-subject">{email.subject}</div>
-        <div className="email-text">{email.content}</div>
+        <p className="email-content">{email.content}</p>
       </div>
     </li>
   );
