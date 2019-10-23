@@ -1,5 +1,5 @@
 import { EmailsActionTypes, EmailsActions } from './emails.actions';
-import { Email } from '../../contracts';
+import { Email } from 'contracts';
 
 export interface EmailsState {
   emails: Email[];

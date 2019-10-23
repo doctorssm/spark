@@ -1,0 +1,27 @@
+{
+  "5dac8318113ce7f7241ced00": {
+    "title": "Отправленные",
+    "icon": "paper-plane",
+    "type": "sent"
+  },
+  "5dac8318a0cd6398784b7a82": {
+    "title": "Черновики",
+    "icon": "file",
+    "type": "drafts"
+  },
+  "5dac83180102ddb761accc77": {
+    "title": "Отмеченные",
+    "icon": "thumbtack",
+    "type": "marked"
+  },
+  "5dac831831b3d7022e6d44dd": {
+    "title": "Архив",
+    "icon": "archive",
+    "type": "archived"
+  },
+  "5dac83188825026b778ef501": {
+    "title": "Корзина",
+    "icon": "trash-alt",
+    "type": "deleted"
+  }
+}

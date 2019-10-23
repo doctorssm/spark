@@ -1,13 +1,7 @@
 import React from 'react';
-import { Dispatch } from 'redux';
-import { connect } from 'react-redux';
-import { Email, NavItem } from '../../contracts';
-import { EmailList, Search } from '../../components';
 
-import { getActiveNavItem } from '../../store/navbar/navbar.selectors';
-import { getActiveEmailId, getEmailsSortedByDate } from '../../store/emails/emails.selectors';
-import { setActiveEmail } from '../../store/emails/emails.actions';
-import { AppState } from '../../store/app.reducer';
+import { EmailList, Search } from 'components';
+import { Email, NavItem } from 'contracts';
 
 interface EmailListContainerProps {
   emails: Email[];
@@ -39,17 +33,4 @@ const EmailListContainer: React.FC<EmailListContainerProps> = (props) => {
   );
 };
 
-const mapStateToProps = (state: AppState) => ({
-  emails: getEmailsSortedByDate(state),
-  activeEmailId: getActiveEmailId(state),
-  activeNavItem: getActiveNavItem(state)
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setActiveEmail: (emailId: string) => dispatch(setActiveEmail(emailId))
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(EmailListContainer);
+export default EmailListContainer;

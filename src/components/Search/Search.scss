@@ -1,34 +1,34 @@
-@import '../../styles/core/variables';
+@import '~styles/core/variables';
 
 .search {
   display: flex;
   background-color: $white;
   padding: 10px;
   border-bottom: 1px solid $alto;
-}
 
-input {
-  margin-right: 10px;
-  cursor: not-allowed;
-}
-
-.link-edit {
-  font-size: 13px;
-  border-radius: 100%;
-  border: 1px solid $primary;
-  color: $primary;
-  text-align: center;
-  width: 34px;
-  height: 30px;
-  transition: 0ms;
-  cursor: pointer;
-
-  &:hover {
-    background-color: $primary;
-    color: $white;
+  input {
+    margin-right: 10px;
+    cursor: not-allowed;
   }
 
-  svg {
+  .link-edit {
+    font-size: 13px;
+    border-radius: 100%;
+    border: 1px solid $primary;
+    color: $primary;
+    text-align: center;
+    width: 34px;
     height: 30px;
+    transition: 0ms;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
+
+    svg {
+      height: 30px;
+    }
   }
 }

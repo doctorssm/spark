@@ -1,4 +1,4 @@
-@import '../../../styles/core/variables';
+@import '~styles/core/variables';
 
 .action {
   display: flex;
@@ -14,7 +14,7 @@
 
   cursor: pointer;
 
-  &.close {
+  &-close {
     background-color: transparent;
   }
 }

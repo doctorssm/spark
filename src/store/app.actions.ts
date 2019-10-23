@@ -8,7 +8,7 @@ export enum AppActionTypes {
 
 export type AppActions = { type: AppActionTypes.INIT };
 
-export const initApp = (): any => async (dispatch: Dispatch) => {
+export const initApp = (): any => (dispatch: Dispatch) => {
   dispatch(initEmails());
   dispatch(initNavbar());
 };

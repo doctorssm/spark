@@ -1,15 +1,4 @@
-@import '../../../styles/core/variables';
-
-%flex-align-center {
-  display: flex;
-  align-items: center;
-}
-
-%text-overflow-ellipsis {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
+@import '~styles/core/variables';
 
 .email-item {
   position: relative;
@@ -26,31 +15,23 @@
     background-color: $white-ice;
     outline: 1px solid $primary;
 
-    .email-item-container {
+    .email-item-box {
       border-bottom: 1px solid transparent;
     }
   }
 
-
-  .email-item-container {
+  .email-item-box {
     padding: 15px 0;
     border-bottom: 1px solid $alto;
     overflow: hidden;
   }
 
-  .email-info {
-    display: flex;
-    margin-bottom: 8px;
-
-    width: 100%;
-
+  .email-icon {
     svg {
       font-size: 10px;
       margin-right: 7px;
     }
-  }
 
-  .email-icon {
     @extend %flex-align-center;
   }
 
@@ -79,7 +60,7 @@
     @extend %text-overflow-ellipsis;
   }
 
-  .email-text {
+  .email-content {
     font-size: 13px;
     color: $mid-gray;
     white-space: nowrap;
@@ -87,19 +68,28 @@
     overflow: hidden;
   }
 
-  &.unread {
-    .email-info::before {
-      content: '';
-      position: absolute;
-      top: 18px;
-      left: 10px;
+  .email-unread::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 10px;
 
-      display: inline-block;
-      border: 1px solid $primary;
-      border-radius: 100%;
+    display: inline-block;
+    border: 1px solid $primary;
+    border-radius: 100%;
 
-      width: 6px;
-      height: 6px;
-    }
+    width: 6px;
+    height: 6px;
   }
+}
+
+%flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+%text-overflow-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

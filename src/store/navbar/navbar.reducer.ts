@@ -1,12 +1,24 @@
 import { NavbarActionTypes, NavbarActions } from './navbar.actions';
-import { NavItem } from '../../contracts';
+import { NavItem } from 'contracts';
+import { EmailType } from 'enums';
 
 export interface NavbarState {
   items: NavItem[];
+  activeType: EmailType;
+  order: EmailType[];
 }
 
 export const initialState: NavbarState = {
-  items: []
+  items: [],
+  activeType: EmailType.Sent,
+  order: [
+    //
+    EmailType.Sent,
+    EmailType.Drafts,
+    EmailType.Marked,
+    EmailType.Archived,
+    EmailType.Deleted
+  ]
 };
 
 export const navbarReducer = (state: NavbarState = initialState, action: NavbarActions): NavbarState => {
@@ -16,9 +28,7 @@ export const navbarReducer = (state: NavbarState = initialState, action: NavbarA
     }
 
     case NavbarActionTypes.SELECT_NAV_ITEM: {
-      const items = state.items.map((item) => ({ ...item, active: item.type === action.emailType }));
-
-      return { ...state, items };
+      return { ...state, activeType: action.emailType };
     }
 
     default:

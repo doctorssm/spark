@@ -5,7 +5,7 @@ import './EmailContentEmpty.scss';
 
 export const EmailContentEmpty: React.FC = () => {
   return (
-    <div className="empty-email-content">
+    <div className="email-content-empty">
       <FontAwesomeIcon icon={'envelope'} />
     </div>
   );

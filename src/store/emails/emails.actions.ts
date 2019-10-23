@@ -1,11 +1,11 @@
 import { Dispatch } from 'redux';
 
-import EmailService from '../../services/email.service';
-import { AppState } from '../app.reducer';
+import { AppState } from 'store/app.reducer';
 import { getActiveEmail } from './emails.selectors';
-import { getActiveNavItemType } from '../navbar/navbar.selectors';
-import { Email } from '../../contracts';
-import { ActionType, EmailType } from '../../enums';
+import { getActiveNavItemType } from 'store/navbar/navbar.selectors';
+import { EmailService } from 'services';
+import { Email } from 'contracts';
+import { ActionType, EmailType } from 'enums';
 
 const { ipcRenderer } = window.require('electron');
 
@@ -34,7 +34,7 @@ export type EmailsActions =
   | { type: EmailsActionTypes.DELETE_EMAIL_FAIL }
   | { type: EmailsActionTypes.SET_ACTIVE_EMAIL; emailId: string | null };
 
-export const initEmails = (): any => async (dispatch: Dispatch) => {
+export const initEmails = (): any => (dispatch: Dispatch) => {
   dispatch(fetchEmails());
 };
 
@@ -134,7 +134,7 @@ export const setActiveEmail = (emailId: string | null): EmailsActions => ({
   emailId
 });
 
-export const onActionClick = (action: ActionType): any => async (dispatch: Dispatch, getState: () => AppState) => {
+export const onActionClick = (action: ActionType): any => (dispatch: Dispatch, getState: () => AppState) => {
   const email = getActiveEmail(getState());
   const activeNavItemType = getActiveNavItemType(getState());
 

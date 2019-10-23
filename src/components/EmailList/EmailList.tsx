@@ -1,9 +1,7 @@
-import { Email } from '../../contracts';
 import React from 'react';
 
-import { EmailListHeader } from './EmailListHeader/EmailListHeader';
-import { EmailListItem } from './EmailListItem/EmailListItem';
-import { EmailListEmpty } from './EmailListEmpty/EmailListEmpty';
+import { EmailListHeader, EmailListItem, EmailListEmpty } from 'components';
+import { Email } from 'contracts';
 
 interface EmailListProps {
   header: string;

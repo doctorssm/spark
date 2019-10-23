@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import { ActionBar, ActionBarProps } from '../ActionBar/ActionBar';
-import { Email } from '../../contracts';
+import { ActionBar, ActionBarProps } from 'components';
+import { Email } from 'contracts';
 
 import './EmailContent.scss';
 
@@ -14,18 +14,16 @@ export const EmailContent: React.FC<EmailContentProps> = (props) => {
   const { email, onActionClick } = props;
 
   return (
-    <>
+    <div className="container-email-content">
       <div className="mb-25">
         <ActionBar isEmailRead={email.read} onActionClick={onActionClick} />
       </div>
       <div className="email-subject">{email.subject}</div>
-      <div className={classNames('email-content', { unread: !email.read })}>
-        <div className="email-info">
-          <div className="email-from-info">{email.from}</div>
-        </div>
+      <div className="email-box">
+        <div className={classNames('relative bold mb-10', { unread: !email.read })}>{email.from}</div>
         <div className="link mb-30 pointer inline-block">Кому: Sergii Bogush</div>
-        <div className="email-text">{email.content}</div>
+        <p>{email.content}</p>
       </div>
-    </>
+    </div>
   );
 };

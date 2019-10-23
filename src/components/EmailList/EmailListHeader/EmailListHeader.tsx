@@ -13,7 +13,7 @@ export const EmailListHeader: React.FC<EmailListHeaderProps> = (props) => {
   const { header, icon } = props;
 
   return (
-    <header className="list-header">
+    <header className="header-email-list">
       {icon && <FontAwesomeIcon icon={icon as IconProp} />}
       <span>{header}</span>
     </header>
